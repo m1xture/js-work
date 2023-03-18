@@ -10,4 +10,8 @@ console.log(fullName);
 
 const userName = "Viktor";
 const payment = 250;
-console.log("Thanks," + " " + userName + "." + " You have to pay" + " " + payment);
+const message = alert(
+  "Thanks," + " " + userName + "." + " You have to pay" + " " + payment
+);
+// console.log("Thanks," + " " + userName + "." + " You have to pay" + " " + payment);
+console.log(message);
