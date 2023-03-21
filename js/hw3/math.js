@@ -16,3 +16,5 @@ console.log("найбільше - " + m2 + " " + "найменше -" + " " + m1
 
 const randomNumber = Math.round(Math.random() * (19 - 3) + 3);
 console.log(randomNumber);
+
+console.log(Math.pow(4, 5));

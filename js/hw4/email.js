@@ -15,3 +15,6 @@ const message = alert(
 );
 // console.log("Thanks," + " " + userName + "." + " You have to pay" + " " + payment);
 console.log(message);
+
+
+// console.log(Math.pow(2, 4));
