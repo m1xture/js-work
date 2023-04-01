@@ -128,9 +128,7 @@ result = a + b < 4 ? (result = "Нижче") : (result = "Вище");
 
 //todo: #10
 
-const mathRandomNumber = Number.parseInt(
-  Math.round(Math.random() * (5 - 1) + 1)
-);
+const mathRandomNumber = Math.round(Math.random() * (5 - 1) + 1);
 if (mathRandomNumber === 5) {
   console.log("it is five");
 } else if (mathRandomNumber === 4) {
