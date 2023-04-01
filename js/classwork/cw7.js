@@ -62,4 +62,4 @@ if (balance > 0) {
 message = balance > 0 ? "Pozitiv bal" : "Negativ bal";
 console.log(message);
 
-//? Змінна = умова ? Правда (true) : Неправда, хибне значння
+//? Змінна = умова ? Правда (true) : Неправда, хибне значення
