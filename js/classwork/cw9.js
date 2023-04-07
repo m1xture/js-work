@@ -114,3 +114,4 @@ switch (price) {
   default:
     delivery = "Вам перезвонить менеджер";
 }
+ 
