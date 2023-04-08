@@ -58,16 +58,21 @@ switch (drink) {
   default:
     price = 0;
     console.log("Our shop does not have this drink");
-};
+}
 
 //todo: #4
 
 const day = prompt("What day is it today?");
 switch (day) {
-  case "Monday" || "Tuesday" || "Wednesday" || "Thursday" || "Friday":
+  case "Monday":
+  case "Tuesday":
+  case "Wednesday":
+  case "Thursday":
+  case "Friday":
     console.log("Today tou have to go to your accursed work");
     break;
-  case "Saturday" || "Sunday":
+  case "Saturday":
+  case "Sunday":
     console.log("In these days people rest, but not you");
     break;
   case "31":
@@ -82,21 +87,29 @@ switch (day) {
 const month = prompt("What month is it today?");
 let timeOfTheYear;
 switch (month) {
-  case "January" || "February" || "December":
+  case "January":
+  case "February":
+  case "December":
     timeOfTheYear = "winter";
     console.log(`It is ${timeOfTheYear} now`);
     break;
-  case "March" || "April" || "May":
+  case "March":
+  case "April":
+  case "May":
     timeOfTheYear = "spring";
     console.log(`It is ${timeOfTheYear} now`);
     break;
-  case "June" || "July" || "August":
+  case "June":
+  case "July":
+  case "August":
     timeOfTheYear = "summer";
     console.log(
       `It is ${timeOfTheYear} now. It is the best time of the year, and don't argue with me!`
     );
     break;
-  case "September" || "October" || "November":
+  case "September":
+  case "October":
+  case "November":
     timeOfTheYear = "autumn";
     console.log(`It is ${timeOfTheYear} now. So, you can go to OctoberFest`);
     break;
