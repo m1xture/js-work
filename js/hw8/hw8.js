@@ -16,8 +16,8 @@ for (let i = 1; i <= 10; i += 1) {
 
 let sum = 0;
 for (let i = 12; i <= 27; i += 1) {
-    sum += i;
-    console.log(sum);
+  sum += i;
+  console.log(sum);
 }
 
 //todo: #3
@@ -45,10 +45,11 @@ for (let i = 1; i <= 100; i += 1) {
 
 //todo: #5
 
-for (let i = 1; i <= 30; i += 1) {
+for (let i = 10; i <= 30; i += 1) {
   if (i === 15) {
     continue;
   }
+  console.log(i);
 }
 
 //todo: #6
