@@ -64,3 +64,15 @@ for (let i = 1; i <= goods; i += 1) {
   totalPrice += price;
 }
 console.log(`The total price is ${totalPrice}`);
+
+//todo: #7
+
+for (let i = 1; i <= 5; i += 1) {
+  console.log(i);
+}
+
+// let num = 0;
+// while (num <= 5) {
+//   num += 1;
+//   console.log(num);
+// }
