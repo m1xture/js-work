@@ -67,12 +67,75 @@ console.log(`The total price is ${totalPrice}`);
 
 //todo: #7
 
+//? for
+
 for (let i = 1; i <= 5; i += 1) {
   console.log(i);
 }
 
-// let num = 0;
-// while (num <= 5) {
-//   num += 1;
-//   console.log(num);
-// }
+//? while
+
+let n = 0;
+while (n < 5) {
+  n++;
+  console.log(n);
+}
+
+//? do while
+
+let n2 = 0;
+do {
+  n2++;
+  console.log(n2);
+} while (n2 < 5);
+
+//todo: #8
+
+const marks = [
+  Math.round(Math.random() * (12 - 1) + 1),
+  Math.round(Math.random() * (12 - 1) + 1),
+  Math.round(Math.random() * (12 - 1) + 1),
+  Math.round(Math.random() * (12 - 1) + 1),
+  Math.round(Math.random() * (12 - 1) + 1),
+  Math.round(Math.random() * (12 - 1) + 1),
+  Math.round(Math.random() * (12 - 1) + 1),
+  Math.round(Math.random() * (12 - 1) + 1),
+  Math.round(Math.random() * (12 - 1) + 1),
+];
+const marksLenght = marks.length;
+let averageMark = Math.round(
+  (marks[0] +
+    marks[1] +
+    marks[2] +
+    marks[3] +
+    marks[4] +
+    marks[5] +
+    marks[6] +
+    marks[7] +
+    marks[8]) /
+    marksLenght
+);
+if (averageMark < 7) {
+  console.log("You have got quite bad mark, so it is better to not hear it");
+} else {
+  console.log("Ur parents are proud with you!");
+}
+
+//? P.s. Я не совсем понимаю как это сделать циклом, так что сделал как знал
+
+//todo: #9
+// let  askNumber = 0;
+// do {
+//   let askNumber = prompt("Type number from 1 till 100 in the bottom");
+//   askNumber = Number(askNumber);
+// } while (askNumber >= 1 && askNumber <= 100);
+
+//todo: #10
+let num5 = Number(prompt("Type number more than 100"));
+
+while (num5 < 100) {
+  num5 = Number(prompt("Type number more than 100"));
+}
+if (num5 > 100) {
+  console.log("right, so right the information about ur credit card now");
+}
