@@ -23,7 +23,36 @@
 
 //todo: #4
 
-const array2 = [4, 5, 8, 3, 2];
-for (let i = 1; i <= 6; i += 1) {
-    console.log(array2[i]);
+// const array2 = [4, 5, 8, 3, 2];
+// for (let i = 1; i <= 6; i += 1) {
+//     console.log(array2[i]);
+// }
+
+//todo: #5 error but right
+
+// const arrayStr = ["df", "fdsfgdfgsdfgfgdfgf", "gvfdgdffgd", "fghdf", "qwerty"];
+// let arrayStrLenght;
+// for (let i = 1; i <= 5; i += 1) {
+//     arrayStrLenght = arrayStr[i].length;
+//     if (arrayStrLenght >= 5) {
+//         console.log(arrayStr[i]);
+//     }
+// };
+
+//todo: #6 right
+
+const arrayNumber = [
+  939, 3737, 13356, 432423, 0, -48, 38, 122222, 7897329385, -87912313,
+];
+const arrayMax = Math.max.apply(null, arrayNumber);
+console.log(arrayMax);
+
+//todo: #7 right
+
+const arrNum = [-1, -23, -87, 88, 324839, 45534234, -32023, -1330, 45432, 777];
+const arrNumLenght = arrNum.length;
+for (let i = 1; i <= arrNumLenght; i += 1) {
+  if (arrNum[i] % 2 === 0) {
+    console.log(arrNum[i]);
+  }
 }
