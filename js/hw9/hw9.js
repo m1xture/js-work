@@ -1,38 +1,38 @@
-//todo: #1
+//todo: #1 right
 
-// const nums = [1, 3, 67];
-// nums[2] = 10;
-// console.log(nums);
+const nums = [1, 3, 67];
+nums[1] = 10;
+console.log(nums);
 
-// //todo: #2
+//todo: #2 right
 
-// const strs = ["jfhdj", "dsdf", "retrhm"];
-// strs.push("fgdfg");
-// console.log(strs);
+const strs = ["jfhdj", "dsdf", "retrhm"];
+strs.push("fgdfg");
+console.log(strs);
 
-//todo: #3
+//todo: #3 error, NaN
 
-// const arrs = [];
-// let arrSum;
-// for (let i = 1; i <= 7; i += 1) {
-//     const arr = Number(Math.round(Math.random() * (200 - 1) + 1));
-//     arrs.push(arr);
-//     arrSum += arr;
-// }
-// console.log(arrSum);
+const arrs = [];
+let arrSum;
+for (let i = 1; i <= 7; i += 1) {
+    const arr = Number(Math.round(Math.random() * (200 - 1) + 1));
+    arrs.push(arr);
+    arrSum += arr;
+}
+console.log(arrSum);
 
-//todo: #4
+//todo: #4 right
 
-// const array2 = [4, 5, 8, 3, 2];
-// for (let i = 1; i <= 6; i += 1) {
-//     console.log(array2[i]);
-// }
+const array2 = [4, 5, 8, 3, 2];
+for (let i = 0; i <= 4; i += 1) {
+    console.log(array2[i]);
+}
 
 //todo: #5 error but right
 
 // const arrayStr = ["df", "fdsfgdfgsdfgfgdfgf", "gvfdgdffgd", "fghdf", "qwerty"];
 // let arrayStrLenght;
-// for (let i = 1; i <= 5; i += 1) {
+// for (let i = 0; i <= 5; i += 1) {
 //     arrayStrLenght = arrayStr[i].length;
 //     if (arrayStrLenght >= 5) {
 //         console.log(arrayStr[i]);
