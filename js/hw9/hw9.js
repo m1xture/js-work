@@ -44,12 +44,21 @@ for (let i = 0; i < arrayStr.length; i += 1) {
 
 //todo: #6 right
 
-const arrayNumber = [
-  939, 3737, 13356, 432423, 0, -48, 38, 122222, 7897329385, -87912313,
-];
+// const arrayNumber = [
+//   939, 3737, 13356, 432423, 0, -48, 38, 122222, 7897329385, -87912313,
+// ];
   
-const arrayMax = Math.max.apply(null, arrayNumber);
-console.log(arrayMax);
+// const arrayMax = Math.max.apply(null, arrayNumber);
+// console.log(arrayMax);
+
+const myArray = [5, 78, 7485, 4545, -9, 0, 121, 78994, 46698];
+let maxNumber = myArray[0];
+for (let i = 0; i < myArray.length; i++) {
+  if (maxNumber < myArray[i]) {
+    maxNumber = myArray[i];
+  }
+}
+console.log(maxNumber);
 
 //todo: #7 right
 
