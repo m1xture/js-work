@@ -26,5 +26,5 @@ btnSubmit.addEventListener("click", function (e) {
   const sideValue = Number(sideLength.value);
   answer1 += sideValue;
   AnswerWrite.textContent = answer1;
-  sideLength.value = ""
+  sideLength.value = "";
 });
