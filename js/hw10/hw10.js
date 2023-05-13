@@ -38,6 +38,9 @@ console.log(arr03.slice(3, 5));
 
 const fruits = ["apple", "banana", "pear", "plum", "grape"];
 const fruitsThird = fruits.splice(2, 1, "ananas", 'watermelon');
+
+//! error ⏫
+
 console.log(`My congratulations you bought ${fruits}`);
 
 //todo: #3
