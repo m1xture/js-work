@@ -8,19 +8,31 @@ const pointer = makePizza;
 
 //todo: #2
 
-// function deliverPizza(pizzaName) {
-//   return `Delivering ${pizzaName} pizza.`;
-// };
+function deliverPizza(pizzaName) {
+  return `Delivering ${pizzaName} pizza.`;
+};
 
-// function makePizza(pizzaName) {
-//   return `Pizza ${pizzaName} is being prepared, please wait...`;
-// };
+function madePizza(pizzaName) {
+  return `Pizza ${pizzaName} is being prepared, please wait...`;
+};
 
-// function makeMessage(pizzaName, callback) {
-//   return;
-// };
+function makeMessage(pizzaName, callback) {
+  return `Pizza ${pizzaName} is prepared`;
+};
 
-// makeMessage("Royal Grand", makePizza);
+const res = makeMessage("Royal Grand", madePizza);
+console.log(res);
+
+
+
+
+//todo: #3
+
+const res1 = madePizza("Ultracheese", function eatPizza (pizzaName) {
+  return `Eating pizza ${pizzaName}`;
+});
+
+console.log(res1);
 
 //todo: #4
 
@@ -34,3 +46,16 @@ function writeAnswer () {
 };
 
 btnRef.addEventListener("click", writeAnswer);
+
+//Todo #5
+
+const clickedBtn = document.querySelector("button");
+const strNums = document.querySelector("[data-nums");
+let clicks = 0;
+
+function writeNums () {
+  clicks += 1;
+  strNums.textContent = clicks;
+}
+
+clickedBtn.addEventListener("click", writeNums);
