@@ -51,3 +51,26 @@ const cookWaterByAnya = cookDish("Anya", "Water");
 console.log(cookBorshByRoman);
 console.log(cookIceByRoman);
 console.log(cookWaterByAnya);
+
+
+//todo: #2
+
+// const roundNumber = function (number, points) {
+//     return number.toFixed(points);
+// };
+
+// console.log(roundNumber(45.232123949865, 2));
+
+//? 2 variation
+
+const roundNumber = function (number, points) {
+    return function (number, points) {
+        return number.toFixed(points);
+    };
+};
+
+//!roundNumber(12.384723708215);
+//!roundNumber(12.384723708215);
+
+const r2 = roundNumber(3);
+r2(676.9246);
