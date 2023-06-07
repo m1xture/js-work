@@ -1,24 +1,28 @@
 //todo: #1
 
-function makePizza() {
-  return "Your pizza is being prepared, please wait.";
-};
+const makePizza = () =>  "Your pizza is being prepared, please wait.";
 const result = makePizza();
 const pointer = makePizza;
 
 //todo: #2
 
-function deliverPizza(pizzaName) {
-  return `Delivering ${pizzaName} pizza.`;
-};
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// };
 
-function madePizza(pizzaName) {
-  return `Pizza ${pizzaName} is being prepared, please wait...`;
-};
+const deliverPizza = (pizzaName) => `Delivering ${pizzaName} pizza.`;
 
-function makeMessage(pizzaName, callback) {
-  return `Pizza ${pizzaName} is prepared`;
-};
+// function madePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// };
+
+const madePizza = (pizzaName) => `Pizza ${pizzaName} is being prepared, please wait...`;
+
+// function makeMessage(pizzaName, callback) {
+//   return `Pizza ${pizzaName} is prepared`;
+// };
+
+const makeMessage = (pizzaName, callback) => `Pizza ${pizzaName} is prepared`;
 
 const res = makeMessage("Royal Grand", madePizza);
 console.log(res);
@@ -40,8 +44,12 @@ const btnRef = document.querySelector("[data-hero-btn]");
 const resultRef = document.querySelector("[data-result]");
 let result1 = "Hello world!";
 
-function writeAnswer() {
-  // const resultValue = result1.value;
+// function writeAnswer() {
+//   // const resultValue = result1.value;
+//   resultRef.textContent = result1;
+// };
+
+const writeAnswer = () => {
   resultRef.textContent = result1;
 };
 
@@ -53,15 +61,19 @@ const clickedBtn = document.querySelector("button");
 const strNums = document.querySelector("[data-nums");
 let clicks = 0;
 
-function writeNums() {
+// function writeNums() {
+//   clicks += 1;
+//   strNums.textContent = clicks;
+// };
+
+const writeNums = () => {
   clicks += 1;
   strNums.textContent = clicks;
-}
+};
 
 clickedBtn.addEventListener("click", writeNums);
 
 //todo: #6
-//? на соплях
 
 const applyCallbackToEachElement = (arr, callback) => {
   return squareCallback(arr);
