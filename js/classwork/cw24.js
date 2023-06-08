@@ -1,0 +1,42 @@
+//todo: objects
+
+const playlist = {
+    name: "Ukraine top 2023",
+    rating: 9.8,
+    tracks: [
+        {
+            trackName: "STEFANIA",
+            trackDuration: 3.00,
+            trackLanguage: "Ukrainian",
+            isPopular: true,
+        },
+        {
+            trackName: "Гімн України",
+            trackDuration: 4.00,
+            trackLanguage: "Ukrainian",
+            isPopular: true,
+        },
+        {
+            trackName: "Ой у лузі",
+            trackDuration: 1.50,
+            trackLanguage: "Ukrainian",
+            isPopular: true,
+        }
+    ],
+    theme: {
+        color: "dark",
+        background: "custom",
+        textColor: "white",
+
+    }
+};
+
+const showPlaylist = (playlist) => {
+    console.log(playlist);
+    const trackFind = playlist.tracks[1];
+    const trackName = trackFind.trackName;
+    console.log(trackName);
+    console.log(playlist.theme.color);
+}
+
+showPlaylist(playlist);
