@@ -2,10 +2,13 @@ const myObject = {
     name: 'La-la-la',
     age: 0,
     city: "k",
-    occupation: "IT",
+    occupation: "",
 };
 
-myObject.age = 
+myObject.name = "Andry";
+myObject.age = 21;
+myObject.city = "Paris";
+myObject.occupation = "it";
 
 console.log(myObject); //? object
 console.log(myObject.age); //? 13
