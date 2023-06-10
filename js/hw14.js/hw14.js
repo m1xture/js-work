@@ -54,7 +54,7 @@ const basket = [
 console.log(basket);
 console.log(basket[1]);
 console.log(basket[1].name);
-console.log(basket);
+console.log(basket[1].vitamines[0]);
 console.log(basket[1].producer.type);
 
 //todo: extra #1
