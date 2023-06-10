@@ -168,3 +168,6 @@ const product = {
 };
 
 console.log(product.name);
+
+//todo: #5
+
