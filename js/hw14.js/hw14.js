@@ -170,4 +170,11 @@ const product = {
 console.log(product.name);
 
 //todo: #5
+//? Возможно сделал не правильно, просто не очень понял задание
 
+const emailInputName = credentials.email;
+const passwordInputName = credentials.password;
+const credentials = {
+    email: "henry.carter@aptmail.com",
+    password: "jqueryismyjam",
+};
