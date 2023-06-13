@@ -41,6 +41,32 @@ const showPlaylist = (playlist) => {
 
 showPlaylist(playlist);
 
+//?
 
-//todo: extra
+// const tracksList = "tracks";
+// console.log(playlist.popularity = true);
+// //? different ways
+// console.log(playlist['tracks']);
+// console.log(playlist.tracks);
 
+// console.log(playlist[tracksList]);
+
+//?
+
+// const themeeBg = "backgroundColor";
+// const themeeValue = "white";
+// const themee = {
+//     [themeeBg]: themeeValue,
+// };
+// console.log(themee);
+
+//? вычисляющее свойство
+
+// const themeBg = "backgroundColor";
+const themeColor = "red";
+const themeWide = 234;
+const themeCard = {
+    themeColor,
+    themeWide,
+};
+console.log(themeColor.[themeColor]);

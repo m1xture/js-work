@@ -1,0 +1,1 @@
+const myArray = [12, 323, -2]
