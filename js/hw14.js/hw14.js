@@ -1,8 +1,8 @@
 const myObject = {
-    name: 'La-la-la',
-    age: 0,
-    city: "k",
-    occupation: "",
+  name: "La-la-la",
+  age: 0,
+  city: "k",
+  occupation: "",
 };
 
 myObject.name = "Andry";
@@ -17,42 +17,42 @@ console.log(myObject.lalala); //? undefined
 //todo: #2
 
 const basket = [
-    {
-        name: "banana",
-        quantity: 3,
-        isPopular: true,
-        whoPicked: undefined,
-        pit: null,
-        vitamines: ["sucroze", "B1", "C"],
-        producer: {
-            name: "tree",
-            type: "banana",
-        }
+  {
+    name: "banana",
+    quantity: 3,
+    isPopular: true,
+    whoPicked: undefined,
+    pit: null,
+    vitamines: ["sucroze", "B1", "C"],
+    producer: {
+      name: "tree",
+      type: "banana",
     },
-    {
-        name: "apple",
-        quantity: 16,
-        isPopular: true,
-        whoPicked: undefined,
-        pit: null,
-        vitamines: ["Ferum", "B1", "C"],
-        producer: {
-            name: "tree",
-            type: "apple",
-        }
+  },
+  {
+    name: "apple",
+    quantity: 16,
+    isPopular: true,
+    whoPicked: undefined,
+    pit: null,
+    vitamines: ["Ferum", "B1", "C"],
+    producer: {
+      name: "tree",
+      type: "apple",
     },
-    {
-        name: "pear",
-        quantity: 10,
-        isPopular: true,
-        whoPicked: undefined,
-        pit: null,
-        vitamines: ["А", "B", "C"],
-        producer: {
-            name: "tree",
-            type: "pear",
-        }
-    }
+  },
+  {
+    name: "pear",
+    quantity: 10,
+    isPopular: true,
+    whoPicked: undefined,
+    pit: null,
+    vitamines: ["А", "B", "C"],
+    producer: {
+      name: "tree",
+      type: "pear",
+    },
+  },
 ];
 console.log(basket);
 console.log(basket[1]);
@@ -73,20 +73,17 @@ console.log(basket[1].producer.type);
 //?phone - телефон, значення "982-126-1588";
 //?email - пошта, значення "henry.carter@aptmail.com".
 
-
-
-
 const apartment = {
-    imgUrl: "https://via.placeholder.com/640x480",
-    descr: "Spacious apartment in the city center",
-    rating: 4,
-    price: 2153,
-    tags: ["premium", "promoted", "top"],
-    owner: {
-        name: "Henry",
-        phone: "982-126-1588",
-        email: "henry.carter@aptmail.com",
-    },
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+  tags: ["premium", "promoted", "top"],
+  owner: {
+    name: "Henry",
+    phone: "982-126-1588",
+    email: "henry.carter@aptmail.com",
+  },
 };
 
 //? Доповни код, присвоївши оголошеним змінним вирази звернення до відповідних властивостей об'єкта apartment.
@@ -148,8 +145,8 @@ apartment.tags.push("trusted");
 apartment.area = 60;
 apartment.rooms = 3;
 apartment.location = {
-    country: "Jamaica",
-    city: "KIngston",
+  country: "Jamaica",
+  city: "KIngston",
 };
 console.log(apartment);
 
@@ -161,10 +158,10 @@ const image = "https://via.placeholder.com/640x480";
 const tags = ["on sale", "trending", "best buy"];
 
 const product = {
-    name,
-    price,
-    image,
-    tags,
+  name,
+  price,
+  image,
+  tags,
 };
 
 console.log(product.name);
@@ -172,9 +169,9 @@ console.log(product.name);
 //todo: #5
 //? Возможно сделал не правильно, просто не очень понял задание
 
-const emailInputName = credentials.email;
-const passwordInputName = credentials.password;
+const emailInputName = "email";
+const passwordInputName = "password";
 const credentials = {
-    email: "henry.carter@aptmail.com",
-    password: "jqueryismyjam",
+  [emailInputName]: "henry.carter@aptmail.com",
+  [passwordInputName]: "jqueryismyjam",
 };
