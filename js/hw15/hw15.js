@@ -51,8 +51,8 @@ const findBestEmployee = (employees) => {
   const employeesValues = Object.values(employees);
   let bestEmployee = "";
   for (const key of employeesKeys) {
-      console.log(key);
-      console.log(employees[key]);
+    console.log(key);
+    console.log(employees[key]);
     if (biggestValue < employees[key]) {
       biggestValue = employees[key];
       bestEmployee = key;
@@ -80,3 +80,26 @@ const countTotalSalary = (employees) => {
 };
 
 //todo: #5
+
+const getAllPropValues = (arr, prop) => {
+  const propValues = [];
+  for (const obj of arr) {
+    propValues.push(obj[prop]);
+  }
+  console.log(propValues);
+  return propValues;
+};
+
+const lala = [
+  {
+    name: "lalala",
+  },
+  {
+    name: "blablabla"
+  }
+];
+
+getAllPropValues(lala, "name");
+
+//todo: #6
+
