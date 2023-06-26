@@ -95,11 +95,58 @@ const lala = [
     name: "lalala",
   },
   {
-    name: "blablabla"
-  }
+    name: "blablabla",
+  },
 ];
 
 getAllPropValues(lala, "name");
 
 //todo: #6
 
+//? Первый вариант, наверное, не правильный
+
+// const calculateTotalPrice = (allProduts, productName) => {
+//   let allPrices = [];
+//   for (const product of allProduts) {
+//     const price = product.quantity * product.price;
+//     allPrices.push(price);
+//     console.log(`Price ${product.name} is - ${price}`);
+//   };
+//   let totalPrice = 0;
+//   for (const productPrice of allPrices) {
+//     totalPrice += productPrice;
+//   };
+//   console.log(`Итоговая цена - ${totalPrice}`);
+// return totalPrice
+// };
+
+//? Второй вариант
+
+const calculateTotalPrice = (allProduts, productName) => {
+  let price = 0;
+  for (const product of allProduts) {
+    if (productName === product.name) {
+      price = product.quantity * product.price;
+      console.log(`${productName} cost - ${price}$`);
+      break;
+    } else {
+      console.log("Product searching...");
+    }
+  }
+  return price;
+};
+
+const products = [
+  {
+    name: "banana",
+    quantity: 5,
+    price: 20,
+  },
+  {
+    name: "orange",
+    quantity: 7,
+    price: 10,
+  },
+];
+
+calculateTotalPrice(products, "banana");
