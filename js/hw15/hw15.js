@@ -150,3 +150,63 @@ const products = [
 ];
 
 calculateTotalPrice(products, "banana");
+
+
+
+//todo: bank
+
+
+const bankAccount = {
+  balance: 500000,
+};
+
+const account = {
+  balance: 0,
+  history: [],
+  addMoney(amount) {
+    this.balance += amount;
+    this.history.push(`Add ${amount} to the balance`)
+    console.log(`You have ${this.balance} in ur balance`);
+    return this.balance;
+  },
+  withdrawMoney(amount) {
+    if (this.balance >= amount) {
+      this.balance -= amount;
+      this.history.push(`Withdraw ${amount} from balance`);
+      console.log(`You have ${this.balance} in ur balance. You have just withdraw ${amount}$`);
+    } else {
+      console.log('Too big amount or not enough money on balance');
+    }
+    return this.balance;
+  },
+  viewHistory() {
+    for (const event of this.history) {
+      console.log(event);
+    };
+    return this.history;
+  },
+  takeloan(amount, time) {
+    if (amount <= bankAccount.balance && time <= 1095) {
+      bankAccount.balance -= amount;
+      this.balance += amount;
+      this.history.push(`Give a loan for ${amount} for ${time} days`);
+      console.log(`You successfully took a loan for ${amount} for ${time} days. Do not forget to return the loan!`);
+      return this.balance;
+    } else if (amount === undefined || time === undefined) {
+      console.log("You forgot to write amount of loan or time");
+    }
+    else if (time > 1095) {
+      console.log("it is a very long term for our bank. Please, choose something earlier");
+      return this.balance;
+    } else if (amount > bankAccount.balance) {
+      console.log("The sum is too big!");
+      return this.balance;
+    }
+  }
+}
+
+account.addMoney(1000);
+account.withdrawMoney(1);
+account.viewHistory();
+account.takeloan(50, 6);
+account.viewHistory();
