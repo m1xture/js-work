@@ -12,7 +12,7 @@
 
 <body>
 <!-- <button type="submit" data-big-btn class="big-btn"> -->
-  <header class="header">
+  <!-- <header class="header">
     <div class="container">
       <a href="" class="header__link-logo">
         <img src="/" alt="logotype" class="header__logo">
@@ -43,10 +43,38 @@
         <div class="hero-circle-1"></div>
         <div class="hero-circle-2"></div>
         <!-- <button type="submit" data-add-money>Add money</button> -->
-      </div>
+    <!--  </div>
     </section>
-  </main>
+  </main> -->
 <!-- </button> -->
+  <main class="main">
+    <div class="container">
+      <p>Your Balance: <span data-viewBalance></span></p>
+      <div class="viewHistory">
+        <p>History:</p>
+        <p data-viewHistory></p>
+      </div>
+
+      <div class="addMoney">
+        <input type="submit" data-addmoney-input placeholder="Amount">
+        <button type="submit" data-addmoney-btn>Add money to ur account</button>
+      </div>
+
+      <div class="withdrawMoney">
+        <input type="submit" data-withdrawMoney-input placeholder="Amount">
+        <button type="submit" data-withdrawMoney-btn>Withdraw money from ur account</button>
+        <p withdrawMoney-error></p>
+      </div>
+
+      <div class="takeLoan">
+        <input type="submit" data-takeLoan-input placeholder="Amount">
+        <input type="submit" data-takeLoan-input-time placeholder="Amount">
+        <button type="submit" data-takeLoan-btn>Withdraw money from ur account</button>
+        <p takeLoan-error></p>
+
+      </div>
+    </div>
+  </main>
   <script src="./js/hw15/hw15.js" type="module"></script>
   <!-- <script src="./js/classwork/cw30.js" type="module"></script> -->
 </body>

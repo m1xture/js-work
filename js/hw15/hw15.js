@@ -205,6 +205,9 @@ const account = {
   }
 }
 
+const viewBalance = document.querySelector("[data-viewBalance]");
+
+
 account.addMoney(1000);
 account.withdrawMoney(1);
 account.viewHistory();
