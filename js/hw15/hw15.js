@@ -164,9 +164,10 @@ const account = {
   balance: 0,
   history: [],
   addMoney(amount) {
-    this.balance += amount;
+    this.balance += Number(amount);
     this.history.push(`Add ${amount} to the balance`)
-    console.log(`You have ${this.balance} in ur balance`);
+    // console.log(`You have ${this.balance} in ur balance`);
+    writeBalance();
     return this.balance;
   },
   withdrawMoney(amount) {
@@ -191,7 +192,7 @@ const account = {
       this.balance += amount;
       this.history.push(`Give a loan for ${amount} for ${time} days`);
       console.log(`You successfully took a loan for ${amount} for ${time} days. Do not forget to return the loan!`);
-      return this.balance;
+      return writeBalance();
     } else if (amount === undefined || time === undefined) {
       console.log("You forgot to write amount of loan or time");
     }
@@ -205,11 +206,28 @@ const account = {
   }
 }
 
-const viewBalance = document.querySelector("[data-viewBalance]");
 
 
-account.addMoney(1000);
-account.withdrawMoney(1);
-account.viewHistory();
-account.takeloan(50, 6);
-account.viewHistory();
+
+const balance = document.querySelector("[data-viewBalance]");
+const inputAddMoney = document.querySelector("[data-addmoney-input]");
+const btnAddMoney = document.querySelector("[data-addmoney-btn]");
+ 
+
+const writeBalance = () => {
+  balance.textContent = account.balance
+}
+
+btnAddMoney.addEventListener("click", account.addMoney(inputAddMoney))
+
+
+
+
+
+
+
+// account.addMoney(1000);
+// account.withdrawMoney(1);
+// account.viewHistory();
+// account.takeloan(50, 6);
+// account.viewHistory();
