@@ -125,8 +125,9 @@ getAllPropValues(lala, "name");
 const calculateTotalPrice = (allProduts, productName) => {
   let price = 0;
   for (const product of allProduts) {
-    if (productName === product.name) {
-      price = product.quantity * product.price;
+    const { name, quantity, PerPrice } = product;
+    if (productName === name) {
+      price = quantity * PerPrice;
       console.log(`${productName} cost - ${price}$`);
       break;
     } else {
@@ -140,12 +141,12 @@ const products = [
   {
     name: "banana",
     quantity: 5,
-    price: 20,
+    PerPrice: 20,
   },
   {
     name: "orange",
     quantity: 7,
-    price: 10,
+    PerPrice: 10,
   },
 ];
 
@@ -157,8 +158,10 @@ calculateTotalPrice(products, "banana");
 
 
 const bankAccount = {
-  balance: 500000,
+  bankBalance: 500000,
 };
+
+const { bankBalance } = bankAccount;
 
 const account = {
   balance: 0,
@@ -187,8 +190,8 @@ const account = {
     return this.history;
   },
   takeloan(amount, time) {
-    if (amount <= bankAccount.balance && time <= 1095) {
-      bankAccount.balance -= amount;
+    if (amount <= bankBalance && time <= 1095) {
+      bankBalance -= amount;
       this.balance += amount;
       this.history.push(`Give a loan for ${amount} for ${time} days`);
       console.log(`You successfully took a loan for ${amount} for ${time} days. Do not forget to return the loan!`);
@@ -199,7 +202,7 @@ const account = {
     else if (time > 1095) {
       console.log("it is a very long term for our bank. Please, choose something earlier");
       return this.balance;
-    } else if (amount > bankAccount.balance) {
+    } else if (amount > bankBalance) {
       console.log("The sum is too big!");
       return this.balance;
     }
@@ -218,7 +221,7 @@ const writeBalance = () => {
   balance.textContent = account.balance
 }
 
-btnAddMoney.addEventListener("click", account.addMoney(inputAddMoney))
+// btnAddMoney.addEventListener("click", account.addMoney(inputAddMoney))
 
 
 
@@ -226,8 +229,8 @@ btnAddMoney.addEventListener("click", account.addMoney(inputAddMoney))
 
 
 
-// account.addMoney(1000);
-// account.withdrawMoney(1);
-// account.viewHistory();
-// account.takeloan(50, 6);
-// account.viewHistory();
+account.addMoney(1000);
+account.withdrawMoney(1);
+account.viewHistory();
+account.takeloan(50, 6);
+account.viewHistory();
