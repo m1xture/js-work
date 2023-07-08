@@ -152,85 +152,86 @@ const products = [
 
 calculateTotalPrice(products, "banana");
 
-
-
 //todo: bank
 
+// const bankAccount = {
+//   bankBalance: 500000,
+// };
 
-const bankAccount = {
-  bankBalance: 500000,
-};
+// const { bankBalance } = bankAccount;
+// console.log(bankBalance);
 
-const { bankBalance } = bankAccount;
+const balance = document.querySelector("[data-viewBalance]");
+const inputAddMoney = document.querySelector("[data-addmoney-input]");
+const btnAddMoney = document.querySelector("[data-addmoney-btn]");
 
 const account = {
   balance: 0,
   history: [],
-  addMoney(amount) {
-    this.balance += Number(amount);
-    this.history.push(`Add ${amount} to the balance`)
+  bankBalance: 500000,
+  writeBalance(inputData) {
+    // 
+    console.log(inputData);
+  },
+  addMoney(e, balance) {
+    const inputData = inputAddMoney.value;
+    this.balance += Number(inputData);
+
+    // this.history.push(`Add ${inputData} to the balance`);
     // console.log(`You have ${this.balance} in ur balance`);
-    writeBalance();
+    // writeBalance(inputData);
+    balance = inputData;
+    console.log(this.balance);
     return this.balance;
   },
   withdrawMoney(amount) {
     if (this.balance >= amount) {
       this.balance -= amount;
       this.history.push(`Withdraw ${amount} from balance`);
-      console.log(`You have ${this.balance} in ur balance. You have just withdraw ${amount}$`);
+      console.log(
+        `You have ${this.balance} in ur balance. You have just withdraw ${amount}$`
+      );
     } else {
-      console.log('Too big amount or not enough money on balance');
+      console.log("Too big amount or not enough money on balance");
     }
     return this.balance;
   },
   viewHistory() {
     for (const event of this.history) {
       console.log(event);
-    };
+    }
     return this.history;
   },
-  takeloan(amount, time) {
+  takeloan(amount, time, bankBalance) {
     if (amount <= bankBalance && time <= 1095) {
+      console.log(bankBalance);
       bankBalance -= amount;
       this.balance += amount;
       this.history.push(`Give a loan for ${amount} for ${time} days`);
-      console.log(`You successfully took a loan for ${amount} for ${time} days. Do not forget to return the loan!`);
+      console.log(
+        `You successfully took a loan for ${amount} for ${time} days. Do not forget to return the loan!`
+      );
       return writeBalance();
     } else if (amount === undefined || time === undefined) {
       console.log("You forgot to write amount of loan or time");
-    }
-    else if (time > 1095) {
-      console.log("it is a very long term for our bank. Please, choose something earlier");
+    } else if (time > 1095) {
+      console.log(
+        "it is a very long term for our bank. Please, choose something earlier"
+      );
       return this.balance;
     } else if (amount > bankBalance) {
       console.log("The sum is too big!");
       return this.balance;
     }
-  }
-}
+  },
+};
 
-
-
-
-const balance = document.querySelector("[data-viewBalance]");
-const inputAddMoney = document.querySelector("[data-addmoney-input]");
-const btnAddMoney = document.querySelector("[data-addmoney-btn]");
- 
-
-const writeBalance = () => {
-  balance.textContent = account.balance
-}
+btnAddMoney.addEventListener("click", account.addMoney);
 
 // btnAddMoney.addEventListener("click", account.addMoney(inputAddMoney))
 
-
-
-
-
-
-
-account.addMoney(1000);
-account.withdrawMoney(1);
-account.viewHistory();
-account.takeloan(50, 6);
-account.viewHistory();
+// account.addMoney();
+// account.withdrawMoney(1);
+// account.viewHistory();
+// account.takeloan(50, 6, bankBalance);
+// account.viewHistory();
