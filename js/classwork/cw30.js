@@ -13,17 +13,21 @@
 
 // //? # css copy))
 
-// const potato = {
-//     type: "vegetable",
-//     quantity: 9,
-//     weight: 5,
-// };
+const potato = {
+    type1: "vegetable",
+    quantity1: 9,
+    weight1: 5,
+};
 
-// const orange = {
-//     type: "fruit",
-//     quantity: 21,
-//     taste: true,
-// };
+const orange = {
+    type2: "fruit",
+    quantity2: 21,
+    taste2: true,
+};
+
+const { type1, quantity1, weight1 } = potato;
+
+const { type2, quantity2, taste2 } = orange;
 
 // const res = Object.assign({}, orange, potato);
 // console.log(res);

@@ -56,31 +56,49 @@ const basket = {
     },
   ],
   showProducts() {
-    return this.products;
+    const { products } = this;
+    console.log(products);
+    return products;
   },
   addProduct(newProduct) {
-    this.products.push(newProduct);
-    return this.products;
+    const { products } = this;
+    products.push(newProduct);
+    return products;
   },
   deleteProduct(deletedProduct) {
     //? #1  сравнить значения deletedProduct и
     //? итерированого обьекта
     //? Если они совпали, удаляем обьект
-    for (const product of this.products) {
-      if (product.name === deletedProduct) {
-        const indexOfDeletedProduct = this.products.indexOf(product);
-        this.products.splice(indexOfDeletedProduct, 1);
+
+    const { products } = this;
+
+    for (const product of products) {
+       const { name } = product;
+      if (name === deletedProduct) {
+        const indexOfDeletedProduct = products.indexOf(product);
+        products.splice(indexOfDeletedProduct, 1);
       }
     }
-    return this.products;
+    return products;
   },
   addProductQuantity(addedProduct, addedQuantity) {
-    for (const product of this.products) {
-      if (product.name === addedProduct) {
-        product.quantity += addedQuantity;
-        return product.quantity;
+    const { products } = this;
+    let countQuantity = 0;
+    for (const product of products) {
+      const { name, quantity } = product;
+      if (name === addedProduct) {
+        // console.log(quantity);
+        // console.log(addedQuantity);
+        countQuantity = quantity;
+        countQuantity += addedQuantity;
+        return quantity;
       }
     }
+  },
+  clearBasket() {
+    const { product } = this;
+    product = [];
+    console.log(this);
   },
 };
 
@@ -97,6 +115,6 @@ console.log(basket.deleteProduct("🍫"));
 
 console.log(basket.addProductQuantity("🍇", 4));
 
-array.forEach(element => {
-    
-});
+// array.forEach(element => {
+
+// });

@@ -252,16 +252,16 @@ const account = {
 };
 
 const { balance, history, bankBalance } = account;
-console.log(balance);
+// console.log(balance);
 
 // btnAddMoney.addEventListener("click", account.addMoney);
 
 // btnAddMoney.addEventListener("click", account.addMoney(inputAddMoney))
 
 account.addMoney(456);
-account.addMoney(456);
+account.addMoney(4056);
 
 account.withdrawMoney(1);
-account.viewHistory();
-account.takeloan("", "");
 // account.viewHistory();
+account.takeloan(40, 5);
+account.viewHistory();
