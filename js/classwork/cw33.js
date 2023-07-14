@@ -49,7 +49,7 @@ const musicLibrary = {
   count: 2,
   artists: [
     {
-      name: "The Beatles",
+      ArtistName1: "The Beatles",
       albums: [
         {
           title: "SgtPepper's Lonely Hearts Club Band",
@@ -90,7 +90,7 @@ const musicLibrary = {
       ],
     },
     {
-      name: "Pink Floyd",
+      ArtistName2: "Pink Floyd",
       albums: [
         {
           title: "The Wall",
