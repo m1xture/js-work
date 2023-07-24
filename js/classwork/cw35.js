@@ -168,28 +168,6 @@ console.log(isEveryoneOnline);
 //todo: повертає новий масив, в якому кожен з рядків складається
 //todo: з першої та останньої букви відповідної строки вхідного масиву.
 
-const array2 = [
-  "apple",
-  "banana",
-  "orange",
-  "banana",
-  "grape",
-  "apple",
-  "kiwi",
-];
 
-const editStr = (arrayOfStr) => {
-  const mapArray = arrayOfStr.map(str => {
-    const findLastIndexOfStr = str.length - 1;
-    const slicedStr = str.slice(0, 1);
-    const slicedStr2 = str.slice(findLastIndexOfStr, findLastIndexOfStr + 1);
-    // console.log(slicedStr2);
-    return slicedStr + slicedStr2;
-  })
-  console.log(mapArray);
-  return mapArray;
-};
-
-editStr(array2);
 
 
