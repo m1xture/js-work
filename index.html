@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You hadn't to read this...</title>
+    <link rel="icon" href="./js-icon.ico" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>You hadn't to read this...</title>
-  <link rel="icon" href="./js-icon.ico">
-
-</head>
-
-<body>
-<!-- <button type="submit" data-big-btn class="big-btn"> -->
-  <!-- <header class="header">
+  <body>
+    <!-- <button type="submit" data-big-btn class="big-btn"> -->
+    <!-- <header class="header">
     <div class="container">
       <a href="" class="header__link-logo">
         <img src="/" alt="logotype" class="header__logo">
@@ -46,37 +44,44 @@
     <!--  </div>
     </section>
   </main> -->
-<!-- </button> -->
-  <main class="main">
-    <div class="container">
-      <p>Your Balance: <span data-viewBalance></span></p>
-      <div class="viewHistory">
-        <p>History:</p>
-        <p data-viewHistory></p>
+    <!-- </button> -->
+    <main class="main">
+      <div class="container">
+        <p>Your Balance: <span data-viewBalance></span></p>
+        <div class="viewHistory">
+          <p>History:</p>
+          <p data-viewHistory></p>
+        </div>
+
+        <div class="addMoney">
+          <input type="text" data-addmoney-input placeholder="Amount" />
+          <button type="submit" data-addmoney-btn>
+            Add money to ur account
+          </button>
+        </div>
+
+        <div class="withdrawMoney">
+          <input type="submit" data-withdrawMoney-input placeholder="Amount" />
+          <button type="submit" data-withdrawMoney-btn>
+            Withdraw money from ur account
+          </button>
+          <p withdrawMoney-error></p>
+        </div>
+
+        <div class="takeLoan">
+          <input type="submit" data-takeLoan-input placeholder="Amount" />
+          <input type="submit" data-takeLoan-input-time placeholder="Amount" />
+          <button type="submit" data-takeLoan-btn>
+            Withdraw money from ur account
+          </button>
+          <p takeLoan-error></p>
+        </div>
       </div>
-
-      <div class="addMoney">
-        <input type="text" data-addmoney-input placeholder="Amount">
-        <button type="submit" data-addmoney-btn>Add money to ur account</button>
-      </div>
-
-      <div class="withdrawMoney">
-        <input type="submit" data-withdrawMoney-input placeholder="Amount">
-        <button type="submit" data-withdrawMoney-btn>Withdraw money from ur account</button>
-        <p withdrawMoney-error></p>
-      </div>
-
-      <div class="takeLoan">
-        <input type="submit" data-takeLoan-input placeholder="Amount">
-        <input type="submit" data-takeLoan-input-time placeholder="Amount">
-        <button type="submit" data-takeLoan-btn>Withdraw money from ur account</button>
-        <p takeLoan-error></p>
-
-      </div>
-    </div>
-  </main>
-  <!-- <script src="./js/hw20/hw20.js" type="module"></script> -->
-  <script src="./js/classwork/cw38.js" type="module"></script>
-</body>
-
+    </main>
+    <!-- <script src="./js/hw20/hw20.js" type="module"></script> -->
+    <script src="
+https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
+"></script>
+    <script src="./js/classwork/cw39.js" type="module"></script>
+  </body>
 </html>
