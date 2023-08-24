@@ -38,16 +38,29 @@ console.log(vova.getInfo());
 
 //todo: #2
 
-class User {
-  constructor({ username, age, followers }) {
-    this.username + username;
-    this.age = age;
-    this.followers = followers;
-  }
-  getInfo() {
+//? Class
+
+// class User {
+//   constructor({ username, age, followers }) {
+//     this.username + username;
+//     this.age = age;
+//     this.followers = followers;
+//   }
+//   getInfo() {
+//     return `User ${this.username} is ${this.age} years old and has ${this.followers} followers`;
+//   }
+// }
+
+//? Function Constructor
+
+const User = function ({ username = "", age = 0, followers = 0 }) {
+  this.username = username;
+  this.age = age;
+  this.followers = followers;
+  this.getInfo = function () {
     return `User ${this.username} is ${this.age} years old and has ${this.followers} followers`;
-  }
-}
+  };
+};
 
 // const avocado = new User("CoolAvocado317", 0.4, 251784);
 const avocado = new User({
@@ -61,29 +74,55 @@ console.log(avocado);
 
 //todo: #3
 
-class Storage {
-  constructor(items) {
-    this.items = items;
-  }
-  getItems() {
+//? Class
+
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+//   getItems() {
+//     this.items.reduce((acc, item) => {
+//       console.log(item);
+//     });
+//     return this.items;
+//   }
+//   addItem(newitem) {
+// this.items.push(newitem);
+// return this.items;
+//   }
+//   removeItem(itemToRemove) {
+// const indexOfItemToRemove = this.items.findIndex(
+//   (item) => item === itemToRemove
+// );
+// const splicedItems = this.items.splice(indexOfItemToRemove, 1);
+// console.log(splicedItems);
+// return splicedItems;
+//   }
+// }
+
+//? Function Constructor
+
+const Storage = function (items) {
+  this.items = items;
+  this.getItems = function () {
     this.items.reduce((acc, item) => {
       console.log(item);
     });
     return this.items;
-  }
-  addItem(newitem) {
+  };
+  this.addItem = function (newitem) {
     this.items.push(newitem);
     return this.items;
-  }
-  removeItem(itemToRemove) {
+  };
+  this.removeItem = function (itemToRemove) {
     const indexOfItemToRemove = this.items.findIndex(
       (item) => item === itemToRemove
     );
     const splicedItems = this.items.splice(indexOfItemToRemove, 1);
     console.log(splicedItems);
     return splicedItems;
-  }
-}
+  };
+};
 
 const itms = [
   "Нанітоіди",
@@ -96,8 +135,7 @@ const itms = [
 const newStorage = new Storage(itms);
 newStorage.addItem("Avocado3000");
 newStorage.removeItem("Пролонгер");
+newStorage.removeItem("Залізні жупи");
+
 newStorage.getItems();
 console.log(newStorage);
-
-//todo: #4
-
