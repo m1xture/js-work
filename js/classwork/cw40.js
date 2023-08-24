@@ -65,5 +65,3 @@ newgh.year = 2220
 console.log(newgh);
 
 newgh.showInfo("newjdfgns");
-
-
