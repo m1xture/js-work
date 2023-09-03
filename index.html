@@ -6,82 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>You hadn't to read this...</title>
     <link rel="icon" href="./js-icon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./reset.css" />
+
+    <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body>
-    <!-- <button type="submit" data-big-btn class="big-btn"> -->
-    <!-- <header class="header">
-    <div class="container">
-      <a href="" class="header__link-logo">
-        <img src="/" alt="logotype" class="header__logo">
-      </a>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="header__item"><a href="./index.html" class="nav__link">Home</a></li>
-          <li class="header__item"><a href="./index.html" class="nav__link">About</a></li>
-          <li class="header__item"><a href="./index.html" class="nav__link">Product</a></li>
-          <li class="header__item"><a href="./index.html" class="nav__link">Contacts</a></li>
-          <li class="header__item"><a href="./index.html" class="nav__link">Something</a></li>
-        </ul>
-      </nav>
+    <div class="switch-block">
+      <label class="switch">
+        <span class="sun"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g fill="#ffd43b">
+              <circle r="5" cy="12" cx="12"></circle>
+              <path
+                d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"
+              ></path>
+            </g>
+          </svg>
+        </span>
+        <span class="moon"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path
+              d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
+            ></path></svg></span>
+        <input type="checkbox" class="input--theme" />
+        <span class="slider"></span>
+      </label>
     </div>
-  </header>
-  <main class="main">
-    <section class="hero">
-      <div class="container">
-        <div class="hero-title-block">
-          <p class="hero__question">Are you a human?</p>
-          <div class="hero-input-btn-block">
-            <input type="text" data-hero-input placeholder="Write your credit card here" />
-            <button type="submit" data-hero-btn>Send</button>
-          </div>
-          <p class="hero__result">La-la-la: <br> <span data-result></span></p>
-        </div>
-        <p>Clicks: <span data-nums></span></p>
-        <div class="hero-circle-1"></div>
-        <div class="hero-circle-2"></div>
-       <button type="submit" data-add-money>Add money</button> -->
-    <!--  </div>
-    </section>
-  </main> -->
-    <!-- </button> -->
-    <main class="main">
-      <div class="container">
-        <p>Your Balance: <span data-viewBalance></span></p>
-        <div class="viewHistory">
-          <p>History:</p>
-          <p data-viewHistory></p>
-        </div>
 
-        <div class="addMoney">
-          <input type="text" data-addmoney-input placeholder="Amount" />
-          <button type="submit" data-addmoney-btn>
-            Add money to ur account
-          </button>
-        </div>
+  
 
-        <div class="withdrawMoney">
-          <input type="submit" data-withdrawMoney-input placeholder="Amount" />
-          <button type="submit" data-withdrawMoney-btn>
-            Withdraw money from ur account
-          </button>
-          <p withdrawMoney-error></p>
-        </div>
+    <!--todo: Scripts -->
 
-        <div class="takeLoan">
-          <input type="submit" data-takeLoan-input placeholder="Amount" />
-          <input type="submit" data-takeLoan-input-time placeholder="Amount" />
-          <button type="submit" data-takeLoan-btn>
-            Withdraw money from ur account
-          </button>
-          <p takeLoan-error></p>
-        </div>
-      </div>
-    </main>
+    <script type="module" src="./js/theme.js"></script>
+
     <!-- <script src="
-https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
-"></script> -->
+      https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
+      "></script> -->
+
     <!-- <script src="./js/hw23/hw23.js" type="module"></script> -->
-    <script src="./js/classwork/cw43.js" type="module"></script>
+
+    <!-- <script src="./js/classwork/cw43.js" type="module"></script> -->
   </body>
 </html>

@@ -133,6 +133,12 @@ console.log(builder.value); // '=^.^='
 //todo #5
 
 class Car {
+  static getSpecs(car) {
+    console.log(
+      `Max. speed - ${car.maxSpeed}. Current Speed - ${car.speed}. Is turned on - ${car.isOn}. Distance you have driven by this car - ${car.distance}. Price - ${car.price}`
+    );
+    return;
+  }
   constructor({
     speed = 0,
     price = 0,
@@ -152,12 +158,12 @@ class Car {
   set changePrice(newPrice) {
     this.price = newPrice;
   }
-  getSpecs() {
-    console.log(
-      `Max. speed - ${this.maxSpeed}. Current Speed - ${this.speed}. Is turned on - ${this.isOn}. Distance you have driven by this car - ${this.distance}. Price - ${this.price}`
-    );
-    return;
-  }
+  // getSpecs() {
+  //   console.log(
+  //     `Max. speed - ${this.maxSpeed}. Current Speed - ${this.speed}. Is turned on - ${this.isOn}. Distance you have driven by this car - ${this.distance}. Price - ${this.price}`
+  //   );
+  //   return;
+  // }
   turnOn() {
     if (this.isOn === false) {
       this.isOn = true;
@@ -236,7 +242,7 @@ console.log(porsche911.viewPrice);
 
 //? GetSpecs
 
-porsche911.getSpecs();
+Car.getSpecs(porsche911);
 
 //? Turn On
 
