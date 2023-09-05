@@ -25,3 +25,11 @@ input {
 textarea {
   outline: none;
 }
+/* label:active {
+  border: none;
+  outline: none;
+  background-color: transparent;
+} */
+label:hover { 
+  cursor: pointer;
+}
