@@ -1,1 +1,1 @@
-# hw-js-1
+# Javascript learning
