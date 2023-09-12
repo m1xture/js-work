@@ -48,7 +48,7 @@ section {
   height: 100vh;
 }
 *::selection {
-  background-color: #e17992;
+  background-color: #e9cdf0;
 }
 .switch-block {
   position: absolute;
@@ -164,4 +164,248 @@ section {
   transform: translateX(30px);
 }
 
-/*? discord */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 330px;
+  padding: 40px 30px;
+  background: #dde1e7;
+  border-radius: 10px;
+  box-shadow: -3px -3px 7px #ffffff73,
+               2px 2px 5px rgba(94,104,121,0.288);
+               position: relative;
+}
+
+.content .text {
+  font-size: 33px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: #595959;
+}
+
+.field {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.field:nth-child(2) {
+  margin-top: 20px;
+}
+
+.field .input {
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  background: #dde1e7;
+  color: #595959;
+  border-radius: 25px;
+  box-shadow: inset 2px 2px 5px #BABECC,
+              inset -5px -5px 10px #ffffff73;
+}
+
+.field .input:focus {
+  box-shadow: inset 1px 1px 2px #BABECC,
+              inset -1px -1px 2px #ffffff73;
+}
+
+.field .span {
+  position: absolute;
+  color: #595959;
+  width: 50px;
+  line-height: 55px;
+}
+
+.field .label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 45px;
+  pointer-events: none;
+  color: #666666;
+}
+
+.field .input:valid ~ label {
+  opacity: 0;
+}
+
+.forgot-pass {
+  text-align: left;
+  margin: 10px 0 10px 5px;
+}
+
+.forgot-pass a {
+  font-size: 16px;
+  color: #666666;
+  text-decoration: none;
+}
+
+.forgot-pass:hover a {
+  text-decoration: underline;
+}
+
+.button {
+  margin: 15px 0;
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  font-weight: 600;
+  background: #dde1e7;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #595959;
+  box-shadow: 2px 2px 5px #BABECC,
+             -5px -5px 10px #ffffff73;
+}
+
+.button:focus {
+  color: #3498db;
+  box-shadow: inset 2px 2px 5px #BABECC,
+             inset -5px -5px 10px #ffffff73;
+}
+
+.sign-up {
+  margin: 10px 0;
+  color: #595959;
+  font-size: 16px;
+}
+
+.sign-up a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.sign-up a:hover {
+  text-decoration: underline;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(2px);
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn-open {
+
+}
+
+.btn-close {
+  background-color: transparent;
+  border: 1px solid #BABECC;
+  color: #BABECC;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: 250ms;
+  &:hover {
+    color: #000;
+    border: 1px solid #000
+  }
+}
+
+.btn-open {
+  position: relative;
+  margin: 0;
+  padding: 0.8em 1em;
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  background-color:#333;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 18px;
+  font-family: inherit;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+button:hover {
+  animation: sh0 0.5s ease-in-out both;
+}
+
+@keyframes sh0 {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: rotate(7deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: rotate(-7deg) translate3d(0, 0, 0);
+  }
+
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+button:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+button::before,
+button::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  z-index: -1;
+  transform: translate(100%, -25%) translate3d(0, 0, 0);
+}
+
+button:hover::before,
+button:hover::after {
+  opacity: 0.15;
+  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+button:hover::before {
+  transform: translate3d(50%, 0, 0) scale(0.9);
+}
+
+button:hover::after {
+  transform: translate(50%, 0) scale(1.1);
+}

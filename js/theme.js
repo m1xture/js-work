@@ -9,3 +9,17 @@ window.addEventListener("click", () => {
 });
 
 
+const refs = {
+  backdrop: document.querySelector("[data-backdrop]"),
+  openModal: document.querySelector("[data-open]"),
+  closeModal: document.querySelector("[data-close]"),
+};
+
+
+
+refs.openModal.addEventListener("click", () => {
+  refs.backdrop.classList.toggle("is-hidden");
+});
+refs.closeModal.addEventListener("click", () => {
+  refs.backdrop.classList.toggle("is-hidden");
+});

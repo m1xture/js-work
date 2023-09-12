@@ -7,7 +7,7 @@ function sayHelloToWorld() {
 sayHelloToWorld();
 
 if (this === window) {
-  console.log("In strict mode this is the same");
+  console.log("it is the same");
 }
 
 //? Если есть строгий режим, то this в глобальной области это undefined.
@@ -41,7 +41,7 @@ const runFn = function () {
 };
 
 const andrew = {
-    class: "Person",
+    type: "Person",
 };
 
 // andrew.runFn(); //! Error, но так задумано
