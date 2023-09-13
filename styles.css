@@ -320,6 +320,7 @@ section {
   top: 10px;
   right: 10px;
   transition: 250ms;
+  overflow: hidden;
   &:hover {
     color: #000;
     border: 1px solid #000
@@ -338,9 +339,9 @@ section {
   cursor: pointer;
   border: none;
   text-transform: uppercase;
-  background-color:#333;
+  background-color:var(--var-fontcolor);
   border-radius: 10px;
-  color: #fff;
+  color: var(--var-bgcolor);
   font-weight: 300;
   font-size: 18px;
   font-family: inherit;

@@ -33,3 +33,6 @@ textarea {
 label:hover { 
   cursor: pointer;
 }
+button {
+  overflow: hidden;
+}
