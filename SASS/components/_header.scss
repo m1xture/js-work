@@ -1,0 +1,25 @@
+.header {
+    padding-top: 20px;
+    background-color: transparent;
+}
+.header__nav {
+    display: flex;
+    justify-content: flex-end;
+}
+.header__list {
+    display: flex;
+}
+
+.header__item {
+    margin-right: 25px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.header__link {
+    color: $text-color;
+    &:hover {
+        text-decoration: underline;
+    }
+}
