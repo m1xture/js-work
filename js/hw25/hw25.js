@@ -1,77 +1,36 @@
-//todo: #1 я его не особо понял
+//todo: #1
 
-const categories = document.querySelector("#categories");
-console.log(`У списку ${categories.children.length} категорій`);
-console.log(`Category: ${ document.querySelector("[data-hw25-title]").textContent }`);
+const refs = {
+  inputRef: document.querySelector("#data-hw25-field"),
+  btnRef: document.getElementById("data-hw25-btn"),
+};
 
+const { inputRef, btnRef } = refs;
 
-//todo: #2
-
-const ingredients = [
-  "Картопля",
-  "Гриби",
-  "Часник",
-  "Помідори",
-  "Зелень",
-  "Приправи",
-];
-
-const ingredientsRefs = document.querySelector("#ingredients");
-
-console.log(ingredientsRefs);
-
-// for (const str of ingredients) {
-//     let newEl = document.createElement("li");
-//     newEl.textContent = str;
-//     ingredientsRefs.append(newEl);
-// };
-
-const newLi = ingredients.map(str => {
-    let newEl = document.createElement("li");
-    newEl.textContent = str;
-    ingredientsRefs.append(newEl);
+inputRef.addEventListener("input", (e) => {
+  e.preventDefault;
+  btnRef.textContent = inputRef.value;
+  if (inputRef.value === "") {
+    btnRef.textContent = "La-la-la";
+  }
 });
-
 
 //todo: #3
 
-const images = [
-  {
-    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    alt: "White and Black Long Fur Cat",
-  },
-  {
-    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
-  },
-  {
-    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    alt: "Group of Horses Running",
-  },
-];
+document
+  .querySelector("[data-hw25-img]")
+  .addEventListener("click", function () {
+    this.src =
+      "https://64.media.tumblr.com/3a0da2e885a449b01f03e3dbd8a5e448/cc68fc454aa7bd1f-32/s1280x1920/f36f4dd8d13a1aa82c8f204dd21f686840bf0595.png";
+  });
 
-const gallryRefs = document.querySelector("#gallery");
+//todo: #3
 
-//? В процессе разработки...
+document.querySelector("[data-hw25-link]").href =
+  "https://github.com/ritwickdey/vscode-live-server/blob/master/docs/faqs.md";
+
+document.querySelector("[data-hw25-img2]").alt = "newmeme";
 
 //todo: #4
 
-
-const refsCount = {
-    decrementBtn: document.querySelector("[data-action=decrement]"),
-    incrementBtn: document.querySelector("[data-action=increment]"),
-    counterEl: document.querySelector("#value"),
-};
-const { decrementBtn, incrementBtn, counterEl } = refsCount;
-
-let numValue = 0;
-
-decrementBtn.addEventListener("click", () => {
-    numValue -= 1;
-    counterEl.textContent = numValue;
-});
-
-incrementBtn.addEventListener("click", () => {
-  numValue += 1;
-  counterEl.textContent = numValue;
-});
+document.querySelector("[data-hw25-list]").children[0].textContent = "Angular";
