@@ -46,3 +46,8 @@ button {
   transition-delay: 50ms;
   background-color: #deb5ff;
 }
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}

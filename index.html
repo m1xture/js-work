@@ -51,7 +51,14 @@
       <section class="hero">
         <div class="container">
           <div class="hero-text-block">
+            <img src="./imgs/str.png" alt="arrow" class="hero__arrow" />
             <h1 class="hero__title">Javascript <span>Practice</span></h1>
+            <div class="hero-btn-block">
+              <button class="hero__btn" type="button" data-modal-open>
+                Hire me
+              </button>
+              <button class="hero__btn" type="button">About me</button>
+            </div>
           </div>
           <div class="hero-imgs-block">
             <img src="./imgs/person.png" alt="person" />
@@ -61,32 +68,46 @@
       </section>
 
       <!-- cw46  -->
-
-      <section class="cw46">
-        <div class="container">
-          <ul class="site-nav">
-            <li class="site-nav__item"><a href="" class="site__link">Contacts</a></li>
-            <li class="site-nav__item"><a href="" class="site__link">About</a></li>
-            <li class="site-nav__item"><a href="" class="site__link">Portfolio</a></li>
-          </ul>
-
-
-
-          <h1></h1>
-      <a name="list" href="">список</a>
-      <ul data-cw46-list>
-        <li><a href="http://google.com">http://google/com</a></li>
-        <li><a href="/tutorial">tutorial.html</a></li>
-        <li><a href="local/path">local/path</a></li>
-        <li><a href="ftp://ftp.com/my.zip"></a>ftp://ftp.com/my.zip</li>
-        <li><a href="https://nodejs.com"></a>https://nodejs.com</li>
-        <li><a href="http://internal.com/test"></a>http://internal.com/test</li>
-      </ul>
-
-
-        </div>
-      </section>
     </main>
+
+    <div class="backdrop is-hidden" data-modal-backdrop>
+      <div class="modal">
+        <button class="modal__close-button" data-modal-close>×</button>
+        <h2 class="modal__title">Got a project in <span>mind?</span></h2>
+        <form action="" class="modal__form">
+          <div class="modal-inputs-block">
+            <div>
+              <label class="modal__label">Your name</label>
+              <input
+                type="text"
+                class="modal__input input-name"
+                name="inputName"
+                placeholder="Name"
+              />
+            </div>
+            <div class="">
+              <label class="modal__label">Your email</label>
+              <input
+                type="text"
+                class="modal__input"
+                name="inputEmail"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+          <label class="modal__label">Your phone</label>
+          <input
+            type="text"
+            class="modal__input input-tel"
+            name="inputPhone"
+            placeholder="Phone"
+          />
+          <label class="modal__label">Your message</label>
+          <textarea class="modal__textarea" placeholder="Message"></textarea>
+          <button class="modal__submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
 
     <!--todo: Scripts -->
 
@@ -98,6 +119,6 @@
 
     <!-- <script src="./js/hw25/hw25.js" type="module"></script> -->
 
-    <script src="./js/classwork/cw46.js" type="module"></script>
+    <!-- <script src="./js/classwork/cw46.js" type="module"></script> -->
   </body>
 </html>
