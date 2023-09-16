@@ -1,0 +1,8 @@
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.gallery__item {
+  width: 300px;
+}/*# sourceMappingURL=hws.css.map */

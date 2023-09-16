@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="../css/main.min.css" /> -->
   </head>
   <body>
     <header></header>
@@ -11,6 +12,7 @@
       <section>
         <div class="container">
           <h2 data-hw25-title>Animals</h2>
+
           <ul id="categories">
             <li class="item">Parrot</li>
             <li class="item">Dog</li>
@@ -18,8 +20,10 @@
             <li class="item">Hamster</li>
             <li class="item">Turtle</li>
           </ul>
+          <h2 data-hw25-title-ing>Ingredients</h2>
 
           <ul id="ingredients"></ul>
+          <h2 data-hw25-title-gallery>Gallery</h2>
 
           <ul id="gallery"></ul>
 
@@ -32,5 +36,27 @@
       </section>
     </main>
     <script defer type="module" src="../js/hw26/hw26.js"></script>
+    <style>
+      #gallery {
+        /* width: 100vw; */
+       display: flex;
+       list-style: none; 
+       gap: 20px;
+       justify-content: center;
+
+      }
+      .gallery__item {
+        /* width: 100px; */
+        /* width: 300px; */
+        /* display: flex; */
+        border-radius: 24px;
+        overflow: hidden;
+      }
+      .hw26-gallery__img {
+        width: 30vw;
+        height: 50vh;
+        /* display: inline; */
+      }
+    </style>
   </body>
 </html>
