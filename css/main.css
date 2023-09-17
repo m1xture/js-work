@@ -436,4 +436,13 @@ button:hover {
   font-weight: 700;
   line-height: normal;
   margin-top: 30px;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.gallery__item {
+  width: 300px;
 }/*# sourceMappingURL=main.css.map */

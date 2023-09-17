@@ -60,7 +60,6 @@ galleryMarkup.map(imgEl => galleryRefs.insertAdjacentHTML("beforeend", imgEl));
 
 // console.log(galleryMarkup);
 
-//? В процессе разработки...
 
 //todo: #4
 
