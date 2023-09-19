@@ -1,11 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Classwork</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <h1></h1>
+    <a name="list" href="">список</a>
+    <ul>
+      <li><a href="http://google.com" data-list-link>http://google/com</a></li>
+      <li><a href="/tutorial" data-list-link>tutorial.html</a></li>
+      <li><a href="local/path" data-list-link>local/path</a></li>
+      <li>
+        <a href="ftp://ftp.com/my.zip" data-list-link></a>ftp://ftp.com/my.zip
+      </li>
+      <li>
+        <a href="https://nodejs.com" data-list-link></a>https://nodejs.com
+      </li>
+      <li>
+        <a href="http://internal.com/test" data-list-link></a
+        >http://internal.com/test
+      </li>
+    </ul>
+
+    <h2>tablle</h2>
+
+    <hr />
+
+    <form name="search-person">
+      Search the visitors:
+      <table id="age-table">
+        <tr>
+          <td>Age:</td>
+          <td id="age-list">
+            <label>
+              <input type="radio" name="age" value="young" />less than 18</label
+            >
+            <label>
+              <input type="radio" name="age" value="mature" />18-50</label
+            >
+            <label>
+              <input type="radio" name="age" value="senior" />more than
+              50</label
+            >
+          </td>
+        </tr>
+
+        <tr>
+          <td>Additionally:</td>
+          <td>
+            <input type="text" name="info[0]" />
+            <input type="text" name="info[1]" />
+            <input type="text" name="info[2]" />
+          </td>
+        </tr>
+      </table>
+
+      <input type="submit" value="Search!" />
+    </form>
+
+    <style>
+      .req9 {
+        color: red;
+        outline: 1px solid red;
+      }
+      .titile {
+        color: #faf;
+      }
+    </style>
+    <script type="module" src="../js/classwork/cw46.js"></script>
+  </body>
 </html>
