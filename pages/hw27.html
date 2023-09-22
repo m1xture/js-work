@@ -32,9 +32,61 @@
         />Pink</label
       >
     </form>
+
+    <h2>Todo: #4</h2>
+    <p>
+      Напиши скрипт який, при наборі тексту в інпут input#name-input (подія
+      input), підставляє його поточне значення в span#name-output. якщо інпут
+      порожній, в спані повинен відображатися рядок 'незнайомець'.
+    </p>
+    <input type="text" placeholder="Your name" data-hw27-inputtext />
+    <h1>Привіт, <span data-textshow></span></h1>
+    <h2>Todo: focus validation</h2>
+
+    <input
+      type="text"
+      placeholder="type 6 symbols"
+      id="validation-input"
+      class="validation-input"
+      data-length="6"
+    />
+
+    <h2>todo: range input</h2>
+    <div class="block">
+      <input type="range" id="font-size-control" min="1" max="100" value="0" />
+      <span id="text-fsz">Abrakadabra!</span>
+    </div>
+    <style>
+      .block {
+        position: relative;
+      }
+      #font-size-control {
+        position: absolute;
+      }
+      .validation-input {
+        padding: 14px;
+        width: 280px;
+        border: none;
+        outline: none;
+        border-radius: 16px;
+      }
+      .valid {
+        border: 1px solid rgb(70, 176, 70);
+      }
+      .invalid {
+        border: 1px solid red;
+      }
+    </style>
+    <script
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script type="module" src="../js/hw27/bodycolor.js" defer></script>
     <script type="module" src="../js/hw27/inputtext.js" defer></script>
     <script type="module" src="../js/hw27/rangefontsize.js" defer></script>
-    <!-- <script type="module" src="../js/hw27/validation.js" defer></script> -->
+    <script type="module" src="../js/hw27/validation.js" defer></script>
   </body>
 </html>
