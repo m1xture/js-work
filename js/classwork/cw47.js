@@ -20,5 +20,3 @@ function focusChange () {
 focusChange();
 console.log(inputsEl[0].dataset);
 
-//# dfsdfsdfsds
-//desc fs
