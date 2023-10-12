@@ -7,7 +7,7 @@
   </head>
   <body>
     <!-- <h1></h1>
-    <a name="list" href="">список</a>
+    <a name="list" href>список</a>
     <ul>
       <li><a href="http://google.com" data-list-link>http://google/com</a></li>
       <li><a href="/tutorial" data-list-link>tutorial.html</a></li>
@@ -117,7 +117,7 @@
 
     <!-- </div> -->
 
-    <form action="" data-form="">
+    <!-- <form action data-form="">
       <input type="text" data-login placeholder="login" name="login" autocomplete="off" />
       <input
         type="password"
@@ -128,9 +128,48 @@
       <label for="check">I`ve written my password correctly</label>
       <input type="checkbox" name="checkbox" data-checkbox id="check" autocomplete="off" />
       <button type="submit">Send</button>
-    </form>
+    </form> -->
+    <button type="button" data-open-btn>open</button>
+    <div class="backdrop is-hidden">
+      <div class="modal">
+        <form data-form>
+          <button type="button" data-close-btn>close</button>
+          <h2>modal</h2>
+          <input type="text" class="modal__input" name="nick" /><input
+            type="text"
+            name="email"
+            class="modal__input"
+          /><button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
 
     <style>
+      input {
+        outline: none;
+      }
+      .backdrop {
+        backdrop-filter: blur(3px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .modal {
+        width: 80vw;
+        height: 70vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: darkseagreen;
+
+      }
+      .is-hidden {
+        opacity: 0;
+        display: none;
+        pointer-events: none;
+      }
       .req9 {
         color: red;
         outline: 1px solid red;
@@ -143,6 +182,6 @@
         display: none;
       }
     </style>
-    <script type="module" src="../js/classwork/cw50.js"></script>
+    <script type="module" src="../js/classwork/cw51.js"></script>
   </body>
 </html>
