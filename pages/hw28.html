@@ -7,7 +7,7 @@
   </head>
   <body>
     <ul class="gallery">
-      <li class=" gallery__item visible">
+      <li class="gallery__item visible">
         <img
           class="image"
           src="https://images.pexels.com/photos/4617294/pexels-photo-4617294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
@@ -53,7 +53,18 @@
         />
       </li>
     </ul>
+
+    <div id="controls">
+      <input type="number" min="1" max="100" step="1" data-amount />
+      <button type="button" data-action="render">Створити</button>
+      <button type="button" data-action="destroy">Очистити</button>
+      <p data-error></p>
+    </div>
+    <ul class="boxes"></ul>
     <style>
+      [data-error] {
+        color: red;
+      }
       .gallery {
         display: flex;
         overflow-x: auto;
@@ -93,6 +104,20 @@
         bottom: 0;
         left: 0;
         right: 0;
+      }
+      .boxes {
+        list-style: none;
+        display: block;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .box {
+        display: inline-flex;
+        list-style: none;
+        border-radius: 15px;
+        width: 30px;
+        height: 30px;
+        /* background-color: aquamarine; */
       }
     </style>
     <script type="module" src="../js/hw28/hw28.js"></script>
