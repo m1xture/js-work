@@ -129,7 +129,7 @@
       <input type="checkbox" name="checkbox" data-checkbox id="check" autocomplete="off" />
       <button type="submit">Send</button>
     </form> -->
-    <button type="button" data-open-btn>open</button>
+    <!-- <button type="button" data-open-btn>open</button>
     <div class="backdrop is-hidden">
       <div class="modal">
         <form data-form>
@@ -142,9 +142,37 @@
           /><button type="submit">Send</button>
         </form>
       </div>
-    </div>
+    </div> -->
+
+    <!-- todo: cw52 -->
+
+    <!-- <p data-text></p>
+    <button type="button" data-btn>absolutely clear</button> -->
+
+      <div class="box">
+        <div class="inner-box"></div>
+      </div>
 
     <style>
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 300px;
+        background-color: #3f51b5;
+        transition: background-color 200ms ease-in;
+      }
+
+      .box--active {
+        background-color: #009688;
+      }
+
+      .inner-box {
+        width: 100px;
+        height: 100px;
+        background-color: #ffc107;
+      }
       input {
         outline: none;
       }
@@ -163,7 +191,6 @@
         top: 50%;
         left: 50%;
         background-color: darkseagreen;
-
       }
       .is-hidden {
         opacity: 0;
@@ -182,6 +209,6 @@
         display: none;
       }
     </style>
-    <script type="module" src="../js/classwork/cw51.js"></script>
+    <script type="module" src="../js/classwork/cw52.js"></script>
   </body>
 </html>
