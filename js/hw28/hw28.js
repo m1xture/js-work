@@ -1,38 +1,74 @@
-const galleryRefs = {
-  galleryList: document.querySelector(".gallery"),
-  galleryItems: Array.from(document.querySelector(".gallery").children),
+const galleryElems = {
+  previewEl: document.querySelector("[data-preview]"),
+  galleryListEl: document.querySelector(".gallery"),
+  galleryImgs: document.querySelectorAll(".image"),
+  backdropEl: document.querySelector(".backdrop"),
 };
 
-console.log(galleryRefs.galleryItems);
+const { previewEl, galleryListEl, galleryImgs, backdropEl } = galleryElems;
+// console.log(galleryImgs);
+previewEl.addEventListener("click", (e) => {
+  backdropEl.classList.toggle("is-hidden");
+  let i = 0;
+  // let currentImg = galleryElems[i];
+  document.addEventListener(
+    "keydown",
+    _.throttle((evt) => {
+      // console.log(evt.code);
+      if (evt.code === "ArrowRight") {
+        if (i === galleryImgs.length - 1) {
+          galleryImgs[i].classList.remove("full-image");
+          galleryImgs[i].parentNode.classList.remove("full-image-container");
+          galleryImgs[i].parentNode.classList.add("gallery__item");
+          i = 0;
+          galleryImgs[i].classList.add("full-image");
+          galleryImgs[i].parentNode.classList.add("full-image-container");
+          galleryImgs[i].parentNode.classList.remove("gallery__item");
 
-const { galleryList, galleryItems } = galleryRefs;
+          return;
+        }
+        galleryImgs[i].classList.remove("full-image");
+        galleryImgs[i].parentNode.classList.remove("full-image-container");
+        galleryImgs[i].parentNode.classList.add("gallery__item");
+        galleryImgs[i + 1].classList.add("full-image");
+        galleryImgs[i + 1].parentNode.classList.add("full-image-container");
+        galleryImgs[i + 1].parentNode.classList.remove("gallery__item");
+        i++;
+      }
+      if (evt.code === "ArrowLeft") {
+        if (i === 0) {
+          galleryImgs[i].classList.remove("full-image");
+          // galleryImgs[i].classList.remove("full-image-animation");
 
-const hiddenItems = galleryItems.slice(0, galleryItems.length - 1);
-console.log(hiddenItems);
+          galleryImgs[i].parentNode.classList.remove("full-image-container");
+          galleryImgs[i].parentNode.classList.add("gallery__item");
+          i = galleryImgs.length - 1;
+          galleryImgs[i].classList.add("full-image");
+          // galleryImgs[i].classList.add("full-image-animation");
 
-let i = 1;
-document.addEventListener("keydown", (e) => {
-  if (e.code === "ArrowRight") {
-    if (i >= galleryItems.length) {
-      galleryItems[i - 1].classList.remove("visible");
-      i = 1;
-    }
+          galleryImgs[i].parentNode.classList.add("full-image-container");
+          galleryImgs[i].parentNode.classList.remove("gallery__item");
 
-    galleryItems[i - 1].classList.remove("visible");
-    galleryItems[i].classList.add("visible");
-    i++;
-  }
-  // console.log(e.code);
-  if (e.code === "ArrowLeft") {
-    if (i - 1 < 0) {
-      galleryItems[i].classList.remove("visible");
+          return;
+        }
+        galleryImgs[i].classList.remove("full-image");
+        galleryImgs[i].parentNode.classList.remove("full-image-container");
+        galleryImgs[i].parentNode.classList.add("gallery__item");
+        // galleryImgs[i].classList.remove("full-image-animation");
+        galleryImgs[i - 1].classList.add("full-image");
+        // galleryImgs[i - 1].classList.add("full-image-animation");
+        // galleryImgs[i - 1].style.animationName = apperPhotoLeft;
+        galleryImgs[i - 1].parentNode.classList.add("full-image-container");
+        galleryImgs[i - 1].parentNode.classList.remove("gallery__item");
+        i--;
+      }
+    }, 180)
+  ); //? ael document
+}); //? global
 
-      i = galleryItems.length - 1;
-    }
-    // i = 1;
-    galleryItems[i].classList.remove("visible");
-    galleryItems[i - 1].classList.add("visible");
-    i--;
+backdropEl.addEventListener("click", (e) => {
+  if (e.target.classList.contains("full-image-container")) {
+    backdropEl.classList.toggle("is-hidden");
   }
 });
 
