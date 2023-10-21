@@ -15,6 +15,9 @@ previewEl.addEventListener("click", (e) => {
     "keydown",
     _.throttle((evt) => {
       // console.log(evt.code);
+      if (evt.code === "Escape") {
+        backdropEl.classList.toggle("is-hidden");
+      }
       if (evt.code === "ArrowRight") {
         if (i === galleryImgs.length - 1) {
           galleryImgs[i].classList.remove("full-image");
