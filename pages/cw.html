@@ -149,9 +149,27 @@
     <!-- <p data-text></p>
     <button type="button" data-btn>absolutely clear</button> -->
 
-      <div class="box">
+    <!-- <div class="box">
         <div class="inner-box"></div>
-      </div>
+      </div> -->
+
+    <ul id="userlist">
+      <li data-id="1">
+        John Doe
+        <button class="deleteBtn">delete</button>
+      </li>
+      <li data-id="2">Bob Johnson<button class="deleteBtn">delete</button></li>
+      <li data-id="3">Lalala Smith<button class="deleteBtn">delete</button></li>
+    </ul>
+
+
+
+    <h1>Task list</h1>
+      <form id="form"><label for="newTask">new task:</label>
+      <input type="text" id="newTask" name="task">
+      <button type="submit" id="addTask">add</button>
+      </form>
+      <ul id="taskList"></ul>
 
     <style>
       .box {
@@ -209,6 +227,6 @@
         display: none;
       }
     </style>
-    <script type="module" src="../js/classwork/cw52.js"></script>
+    <script type="module" src="../js/classwork/cw53.js"></script>
   </body>
 </html>
