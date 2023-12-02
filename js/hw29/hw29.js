@@ -92,6 +92,7 @@ galleryItems.forEach((img) => {
 });
 
 function closeModal(modalPath) {
+  bigImgEl.src = "";
   modalPath.classList.remove("is-open");
 }
 
