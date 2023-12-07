@@ -170,30 +170,26 @@
     </form>
     <ul id="taskList"></ul> -->
 
-    <img
-      src="https://images.pexels.com/photos/19326113/pexels-photo-19326113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-      alt="kfdsf"
-      loading="lazy"
-    /><img
-      src="https://images.pexels.com/photos/4435174/pexels-photo-4435174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-      alt="df"
-      loading="lazy"
-    /><img
-      src="https://images.pexels.com/photos/12444414/pexels-photo-12444414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-      alt="dfsd"
-      loading="lazy"
-    />
-    <img
-      src="https://images.pexels.com/photos/19327741/pexels-photo-19327741.jpeg"
-      alt="laalalla"
-      loading="lazy"
-    />
-    <img
-      src="https://images.pexels.com/photos/6552754/pexels-photo-6552754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-      alt="fds"
-      loading="lazy"
-    />
-    <style></style>
+    <div class="slider">
+      <input type="range" min="1" max="100" value="50" class="slider__input" />
+      <img src="https://via.placeholder.com/300x300" class="slider__image" />
+    </div>
+    <style>
+      .slider {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .slider__input {
+        width: 100%;
+      }
+
+      .slider__image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+      }
+    </style>
     <script src="
       https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
       "></script>
