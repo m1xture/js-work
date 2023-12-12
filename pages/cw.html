@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Classwork</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- <h1></h1>
@@ -170,24 +177,45 @@
     </form>
     <ul id="taskList"></ul> -->
 
-    <div class="slider">
-      <input type="range" min="1" max="100" value="50" class="slider__input" />
-      <img src="https://via.placeholder.com/300x300" class="slider__image" />
-    </div>
+    <div class="root"></div>
+    <div class="big"></div>
+    <div class="target"></div>
+
     <style>
-      .slider {
-        max-width: 400px;
-        margin: 0 auto;
+      body {
+        background-color: #222;
       }
-
-      .slider__input {
-        width: 100%;
+      
+      .root {
+        box-sizing: border-box;
+        width: 90vw;
+        height: 90vh;
+        border: 2px solid rgb(0, 86, 179);
+        border-radius: 20px;
+        position: fixed;
+        top: 50%;
+        right: 50%;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
-
-      .slider__image {
-        display: block;
-        margin: 20px auto;
-        max-width: 100%;
+      .target {
+        transition: 250ms;
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+        /* background-color: rgb(77, 139, 252); */
+        border-radius: 20px;
+        margin: 0 auto
+      }
+      .big {
+        height: 250vh;
+      }
+      .visible {
+        transition-duration: 250ms;
+        
+        opacity: 1;
+        background-color: rgb(77, 139, 252);
       }
     </style>
     <script src="
