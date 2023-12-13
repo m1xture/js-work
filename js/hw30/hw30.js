@@ -18,3 +18,15 @@ inputElem.addEventListener(
     imgElem.src = link.join("");
   }, 300)
 );
+
+//todo: #2
+
+const boxEl = document.querySelector("#box");
+
+document.addEventListener(
+  "mousemove",
+  _.debounce((evt) => {
+    boxEl.style.top = `${evt.pageY}px`;
+    boxEl.style.left = `${evt.pageX}px`;
+  }, 100)
+);
