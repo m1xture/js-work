@@ -8,7 +8,7 @@ document.addEventListener("scroll", () => {
   };
 
   function callbackFn(entries, observer) {
-    console.log("cb call");
+    // console.log("cb call");
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         //   console.log(true);
