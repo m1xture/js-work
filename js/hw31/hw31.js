@@ -46,7 +46,7 @@ const callbackFn = (entries, observer) => {
       downloadImg(entry.target);
       console.log(entry);
       shownPreloader(false, entry.target.nextElementSibling);
-      // observer.unobserve(entry.target);
+      observer.unobserve(entry.target);
     } else {
       resetImg(entry.target);
       shownPreloader(true, entry.target.nextElementSibling);
