@@ -1,22 +1,17 @@
 //todo: Вытягиваю все фото и задаю значение атрибуту src
 
-// const listEl = document.querySelector(".gallery__list");
+
 function downloadImg(imgEl) {
   imgEl.src = imgEl.dataset.src;
   imgEl.style.border = "5px solid #ff8e3c";
-  // imgEl.classList.add("visible--img");
 }
 function shownPreloader(isShow, preloaderElem) {
   if (isShow) {
-    // preloadersElems.forEach((preloader) => {
-    //   preloader.classList.add("visible--preloader");
-    // });
+ 
     preloaderElem.classList.add("visible--preloader");
     return;
   }
-  // preloadersElems.forEach((preloader) => {
-  //   preloader.classList.remove("visible--preloader");
-  // });
+
   preloaderElem.classList.remove("visible--preloader");
 
   return;
@@ -24,7 +19,6 @@ function shownPreloader(isShow, preloaderElem) {
 function resetImg(imgEl) {
   imgEl.src = "";
   imgEl.style.border = "none";
-  // imgEl.classList.remove("visible--img");
 }
 //todo: observer
 
