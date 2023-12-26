@@ -1,0 +1,24 @@
+{
+  "name": "js-work",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./js/hw32/hw32.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m1xture/js-work.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m1xture/js-work/issues"
+  },
+  "homepage": "https://github.com/m1xture/js-work#readme",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
