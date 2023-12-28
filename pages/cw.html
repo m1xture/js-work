@@ -181,7 +181,7 @@
     <div class="big"></div>
     <div class="target"></div> -->
 
-    <ul class="fruits-list">
+    <!-- <ul class="fruits-list">
       <li>
         <img src="../imgs/fruits/pic1.jpg" alt="Fruit 1" />
         <h3>Fruit 1</h3>
@@ -230,55 +230,68 @@
         <img src="../imgs/fruits/p12.jpg" alt="Fruit 12" />
         <h3>Fruit 12</h3>
       </li>
-    </ul>
+    </ul> -->
+
+    <p><a href="index.html">На головну</a></p>
+    <div class="palette js-palette"></div>
 
     <style>
-     
-
-      .fruits-list {
+      * {
+        padding: 0;
+        margin: 0;
+        border: none;
+      }
+      body {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        list-style: none;
-        margin: 0;
+        justify-content: space-around;
+        align-items: center;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .palette {
+        display: grid;
+        max-width: 1200px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 12px;
         padding: 0;
+        list-style: none;
+        margin-left: auto;
+        margin-right: auto;
       }
-      .fruits-list li {
-        flex-basis: calc(33.33% - 10px);
-        margin-bottom: 20px;
-        position: relative;
+      .color-card {
+        padding: 5px;
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+          0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .fruits-list img {
-        display: block;
-        height: 100%;
-        object-fit: cover;
-        /* position: absolute; */
-        /* top: 0; */
-        width: 100%;
-        filter: blur(6px);
+      .color-card.is-active {
+        transform: perspective(400px) rotateX(10deg);
       }
-      .fruits-list h3 {
-        background-color: rgba(255, 255, 255, 0.7);
-        color: #333;
-        font-size: 20px;
+      .color-swatch {
+        height: 128px;
+        cursor: pointer;
+      }
+      .color-meta {
         padding: 10px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        text-align: center;
+        font-weight: 700;
       }
-      .in-viewport-img {
-        filter: none !important;
+      .color-meta p {
+        margin-top: 0;
+        margin-bottom: 0;
+        letter-spacing: 0.1em;
       }
-      .in-viewport-text {
-        color: rgb(0, 123, 255) !important;
+      div {
+        width: 100px;
+        height: 100px;
       }
     </style>
     <!-- <script src="
       https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
       "></script> -->
     <!-- <script type="module" src="../js/classwork/cw54.js"></script> -->
-    <script type="module" src="../js/classwork/cw55.js"></script>
+    <script type="module" src="../js/classwork/cw56.js"></script>
   </body>
 </html>
