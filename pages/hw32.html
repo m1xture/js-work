@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hw32</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +23,61 @@
       <h1 class="title">Hello <span>world</span>!</h1>
       <h2 class="subtitle">La-la-la</h2>
       <button type="button" id="btn">Click me!</button>
+      <button type="button" data-openBtn="open">Open form!</button>
+    </div>
+
+    <!--? Modal -->
+
+    <div class="overlay is-hidden">
+      <div class="modal">
+        <button type="button" class="close-btn" data-close>✖</button>
+        <h2 class="modal__title">Welcome!</h2>
+        <form class="form">
+          <ul class="form__list">
+            <li class="form__item">
+              <label for="fname" class="form__label">First name</label
+              ><input
+                type="text"
+                name="fname"
+                id="fname"
+                class="form__input"
+                placeholder="John"
+              />
+            </li>
+            <li class="form__item">
+              <label for="lname" class="form__label">Last name</label
+              ><input
+                type="text"
+                name="lname"
+                id="lname"
+                class="form__input"
+                placeholder="Smith"
+              />
+            </li>
+            <li class="form__item">
+              <label for="email" class="form__label">Email</label
+              ><input
+                type="text"
+                name="email"
+                id="email"
+                class="form__input"
+                placeholder="johnsmith123@gmail.com"
+              />
+            </li>
+            <li class="form__item">
+              <label for="agree" class="form__label"
+                >You accept all our privacy policy</label
+              ><input
+                type="checkbox"
+                name="agree"
+                id="agree"
+                class="form__input"
+              />
+            </li>
+          </ul>
+          <button type="submit" class="form__btn">Submit</button>
+        </form>
+      </div>
     </div>
     <style>
       body {
@@ -41,7 +103,7 @@
         font-size: 28px;
         font-weight: 400;
       }
-      button {
+      button[type="button"] {
         position: relative;
         display: inline-block;
         margin: 15px;
@@ -59,13 +121,150 @@
         box-shadow: inset 0 0 0 0 #725ac1;
       }
 
-      button:hover {
+      button[type="button"]:hover {
         color: white;
         box-shadow: inset 0 -100px 0 0 #725ac1;
       }
 
-      button:active {
+      button[type="button"]:active {
         transform: scale(0.9);
+      }
+      .is-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(4.4px);
+        z-index: 10;
+      }
+      .modal {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        width: 25vw;
+        height: 50vh;
+        background-color: rgb(79, 79, 79);
+        border-radius: 20px;
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        /* position: relative; */
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      .modal__title {
+        color: #111;
+        font-size: 38px;
+        margin: 0;
+        padding: 0;
+      }
+      .form {
+        text-align: center;
+      }
+      .form .form__list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+      }
+      .form__item label {
+        display: block;
+        margin-bottom: 5px;
+        line-height: 1.25;
+        font-size: 16px;
+        color: #111;
+        text-align: left;
+      }
+      .form__item {
+        margin-bottom: 10px;
+      }
+      .form__item:last-child {
+        margin-bottom: 0;
+      }
+      .form__input {
+        width: 15vw;
+        height: 3.5vh;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        padding: 6px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        background-color: #5f5f5f;
+        color: #eee;
+      }
+      .form__input::placeholder {
+        color: #7f7f7f;
+      }
+      .form__item:last-child {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 15px;
+      }
+      .form__item:last-child label {
+        font-size: 14px;
+      }
+      .form__item:last-child input {
+        width: 1.1vw;
+        margin-left: 10px;
+      }
+      input[type="text"] {
+        transition-duration: 200ms;
+      }
+      input[type="text"]:hover {
+        /* border: 2px solid #725ac1; */
+        box-shadow: 0px 0px 15px 0px rgba(59, 7, 172, 0.61);
+      }
+      input[type="text"]:focus,
+      input[type="text"]:active {
+        border: 2px solid #725ac1;
+      }
+      .form__btn {
+        border: none;
+        border-radius: 20px;
+        width: 4.5vw;
+        height: 4vh;
+        background-color: #333;
+        color: #eee;
+        transition-duration: 300ms;
+        transition-delay: 50ms;
+        transition-timing-function: ease-in-out;
+        border: none;
+        outline: none;
+      }
+      .form__btn:hover,
+      .form__btn:focus {
+        outline: none;
+        border: 2.5px solid #725ac1;
+        background-color: transparent;
+        transform: scale(1.1);
+      }
+      .modal .close-btn {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        margin: 0;
+        color: #eee;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     </style>
     <script src="../js/hw32/hw32.js" type="module" defer></script>
