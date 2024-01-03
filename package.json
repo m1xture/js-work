@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/m1xture/js-work#readme",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "http-server": "^14.1.1"
   }
 }
