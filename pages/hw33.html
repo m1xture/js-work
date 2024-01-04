@@ -4,23 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HW33</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <form>
       <input type="text" placeholder="first name" name="fname" />
       <input type="text" placeholder="last name" name="lname" /><input
-        type="text"
+        type="number"
         placeholder="age"
         name="age"
       />
-      <input type="text" placeholder="course" name="course" /><input
+      <input type="num" placeholder="course" name="course" />
+      <!-- <input
         type="text"
         placeholder="faculty"
         name="faculty"
-      />
+      /> -->
+
+      <select name="faculty" id="">
+        <option value="engineer">engineer</option>
+        <option value="fireman">fireman</option>
+        <option value="medic">medic</option>
+      </select>
       <input type="text" placeholder="courses" name="courses" />
+
       <button type="submit">Submit</button>
     </form>
+
+    <style>
+      body {
+        padding-top: 20%;
+        background-color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        width: 240px;
+        border-radius: 20px;
+        border: none;
+        margin-bottom: 20px;
+        background-color: #eee;
+        padding: 10px;
+      }
+      button {
+        border-radius: 10px;
+        background-color: transparent;
+        border: 2px solid #327ce3;
+        color: #eee;
+        width: 130px;
+        padding: 10px;
+      }
+      .is-hidden {
+        opacity: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+    </style>
+
     <script type="module" src="../js/hw33/hw33.js"></script>
   </body>
 </html>
