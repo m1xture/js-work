@@ -1,4 +1,6 @@
 const formElem = document.querySelector("form");
+const btnsListEl = document.querySelector(".btns__list");
+const clearBtnEl = document.querySelector("[data-clear]");
 
 function addSidebar() {
   return (document.body.innerHTML =
@@ -49,7 +51,7 @@ formElem.addEventListener("submit", (e) => {
 
   arr.map((elem) => {
     document.querySelector("tbody").insertAdjacentHTML(
-      "afterbegin",
+      "beforeend",
       `<tr>
     <td>${elem.firstName}</td>
     <td>${elem.lastName}</td>
@@ -60,7 +62,19 @@ formElem.addEventListener("submit", (e) => {
     </tr>`
     );
   });
-
+  btnsListEl.classList.remove("is-hidden");
+  clearBtnEl.addEventListener("click", () => {
+    document.querySelector("#table").innerHTML = "";
+    clearBtnEl.insertAdjacentHTML(
+      "afterend",
+      "<p data-msg>Data was deleted</p>"
+    );
+    setTimeout(() => {
+      document.querySelector("[data-msg]").remove();
+    }, 5000);
+    return localStorage.clear();
+  });
+  document.body.style.display = "block";
   // console.log(JSON.parse(localStorage.getItem("student")));
 });
 

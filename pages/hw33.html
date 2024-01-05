@@ -33,27 +33,43 @@
         <option value="medic">medic</option>
       </select>
       <input type="text" placeholder="courses" name="courses" />
-      
+
       <button type="submit">Submit</button>
     </form>
 
     <table id="table"></table>
 
+    <ul class="btns__list is-hidden">
+      <li>
+        <button type="button" class="btn" data-clear>Clear all info</button>
+      </li>
+      <!-- <li><button type="button" class="btn"></button></li> -->
+      <!-- <li><button type="button" class="btn"></button></li> -->
+    </ul>
+
     <style>
+      ul {
+        list-style: none;
+      }
+      .btns__list {
+        display: block;
+      }
+      .btns__list li button {
+        color: #333;
+      }
       table {
-        border: 1px solid #ccc; /* граница всей таблицы */
+        border: 1px solid #ccc;
         border-collapse: collapse;
-        
       }
       .w90 {
         width: 90%;
       }
       tr {
-        border: 1px solid #ccc; /* границы между строками */
+        border: 1px solid #ccc;
       }
       td,
       th {
-        border: 1px solid #ccc; /* границы между столбцами */
+        border: 1px solid #ccc;
       }
       body {
         padding-top: 20%;
