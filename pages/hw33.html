@@ -33,11 +33,28 @@
         <option value="medic">medic</option>
       </select>
       <input type="text" placeholder="courses" name="courses" />
-
+      
       <button type="submit">Submit</button>
     </form>
 
+    <table id="table"></table>
+
     <style>
+      table {
+        border: 1px solid #ccc; /* граница всей таблицы */
+        border-collapse: collapse;
+        
+      }
+      .w90 {
+        width: 90%;
+      }
+      tr {
+        border: 1px solid #ccc; /* границы между строками */
+      }
+      td,
+      th {
+        border: 1px solid #ccc; /* границы между столбцами */
+      }
       body {
         padding-top: 20%;
         background-color: #333;
