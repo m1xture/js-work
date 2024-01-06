@@ -13,37 +13,54 @@
     />
   </head>
   <body>
-    <form>
-      <input type="text" placeholder="first name" name="fname" />
-      <input type="text" placeholder="last name" name="lname" /><input
-        type="number"
-        placeholder="age"
-        name="age"
-      />
-      <input type="num" placeholder="course" name="course" />
-      <!-- <input
-        type="text"
-        placeholder="faculty"
-        name="faculty"
-      /> -->
+    <div class="block-form">
+      <form>
+        <input type="text" placeholder="first name" name="fname" />
+        <input type="text" placeholder="last name" name="lname" /><input
+          type="number"
+          placeholder="age"
+          name="age"
+        />
+        <input type="num" placeholder="course" name="course" />
+        <!-- <input
+          type="text"
+          placeholder="faculty"
+          name="faculty"
+        /> -->
+  
+        <select name="faculty" id="">
+          <option value="engineer">engineer</option>
+          <option value="fireman">fireman</option>
+          <option value="medic">medic</option>
+        </select>
+        <input type="text" placeholder="courses" name="courses" />
+  
+        <button type="submit">Submit</button>
+      </form>
+    </div>
 
-      <select name="faculty" id="">
-        <option value="engineer">engineer</option>
-        <option value="fireman">fireman</option>
-        <option value="medic">medic</option>
-      </select>
-      <input type="text" placeholder="courses" name="courses" />
-
-      <button type="submit">Submit</button>
-    </form>
-
-    <table id="table"></table>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Last name</th>
+          <th>Age</th>
+          <th>Course</th>
+          <th>Faculty</th>
+          <th>Courses</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
     <ul class="btns__list is-hidden">
       <li>
         <button type="button" class="btn" data-clear>Clear all info</button>
       </li>
-      <!-- <li><button type="button" class="btn"></button></li> -->
+      <li>
+        <button type="button" class="btn" data-edit>Edit info</button>
+      </li>
+      <li><button type="button" class="btn" data-add>Add info</button></li>
       <!-- <li><button type="button" class="btn"></button></li> -->
     </ul>
 
@@ -83,6 +100,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 500px;
+        height: 90vh;
+        /* background-color: #9d8181; */
       }
       input {
         width: 240px;
@@ -104,6 +124,19 @@
         opacity: 0;
         position: absolute;
         pointer-events: none;
+      }
+      .block-form {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        background-color: #8adfda;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: none;
       }
     </style>
 
