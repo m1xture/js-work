@@ -45,70 +45,16 @@ formElem.addEventListener("submit", (e) => {
     };
     let arr = [];
     if (localStorage.length !== 0) {
-      // arr = [localStorage.getItem("student"), JSON.stringify([obj])];
       const parsedArr = JSON.parse(localStorage.getItem("student"));
-      // console.log(parsedArr);
       parsedArr.push(obj);
       arr = parsedArr;
-      // console.log(arr);
-      // console.log(parsedArr);
     } else {
-      // arr = [JSON.stringify(obj)];
       arr = [obj];
     }
-
-    // console.log(arr);
     localStorage.setItem("student", JSON.stringify(arr));
     loadTable();
     formBlockEl.style.display = "none";
-
-    // formElem.classList.add("is-hidden");
-    // document.body.style.backgroundColor = "#fff";
-    // document.querySelector("table").classList.add("w90");
-    // document.querySelector("#table").innerHTML = `<thead>
-    // <tr>
-    //   <th>Name</th>
-    //   <th>Last name</th>
-    //   <th>Age</th>
-    //   <th>Course</th>
-    //   <th>Faculty</th>
-    //   <th>Courses</th>
-    // </tr>
-    // </thead>
-    // <tbody></tbody>
-    // `;
-
-    // arr.map((elem) => {
-    //   document.querySelector("tbody").insertAdjacentHTML(
-    //     "beforeend",
-    //     `<tr>
-    //   <td>${elem.firstName}</td>
-    //   <td>${elem.lastName}</td>
-    //   <td>${elem.age}</td>
-    //   <td>${elem.course}</td>
-    //   <td>${elem.faculty}</td>
-    //   <td>${elem.courses}</td>
-    //   </tr>`
-    //   );
-    // });
-    // btnsListEl.classList.remove("is-hidden");
-    // clearBtnEl.addEventListener("click", () => {
-    //   document.querySelector("#table").innerHTML = "";
-    //   clearBtnEl.insertAdjacentHTML(
-    //     "afterend",
-    //     "<p data-msg>Data was deleted</p>"
-    //   );
-    //   setTimeout(() => {
-    //     document.querySelector("[data-msg]").remove();
-    //   }, 5000);
-    //   return localStorage.clear();
-    // });
-    // document.body.style.display = "block";
-    // console.log(JSON.parse(localStorage.getItem("student")));
   } else {
-    // console.log(e.submitter);
-    // console.log(e.submitter.classList.contains("submitBtn"));
-    // console.log(e);
     const currentElem = JSON.parse(localStorage.getItem("student"))[
       e.currentTarget.index.value - 1
     ];
@@ -128,47 +74,57 @@ formElem.addEventListener("submit", (e) => {
         : (endELem[key] = newElem[key]);
     });
     const indexOfElem = e.currentTarget.index.value - 1;
-    const newArr = JSON.parse(localStorage.getItem("student")).splice(
-      indexOfElem,
-      1,
-      endELem
-    );
+    const newArr = JSON.parse(localStorage.getItem("student"));
+    newArr.splice(indexOfElem, 1, endELem);
     console.log(endELem);
     localStorage.setItem("student", JSON.stringify(newArr));
     console.log(indexOfElem);
-    // console.log(e.currentTarget.index);
+
+    loadTable();
+    formBlockEl.style.display = "none";
   }
 });
 
 //?
 
-// localStorage.setItem("arr", JSON.stringify(["lala", 2, null]));
-
 document.addEventListener("DOMContentLoaded", loadTable);
 
 document.querySelector("[data-add]").addEventListener("click", () => {
+  
   formBlockEl.style.display = "flex";
+
+  if (formElem.index) {
+    formElem.index.remove();
+    formElem.fname.value = "";
+    formElem.lname.value = "";
+    formElem.age.value = "";
+    formElem.course.value = "";
+    formElem.faculty.value = "engineer";
+    formElem.courses.value = "";
+  }
 });
+let click = 0;
 
 document.querySelector("[data-edit]").addEventListener("click", () => {
   try {
     const index = JSON.parse(localStorage.getItem("student")).length;
-    let options = "<option></option>";
-    for (let i = 1; i <= index; i++) {
-      options += `<option value="${i}">${i}</option>`;
-    }
-    document
-      .querySelector("input[name=fname]")
-      .insertAdjacentHTML(
-        "beforebegin",
-        `<select id="student_index" name="index">${options}</select>`
-      );
 
-    let click = 0;
+    if (click === 0) {
+      let options = "<option></option>";
+      for (let i = 1; i <= index; i++) {
+        options += `<option value="${i}">${i}</option>`;
+      }
+      document
+        .querySelector("input[name=fname]")
+        .insertAdjacentHTML(
+          "beforebegin",
+          `<select id="student_index" name="index">${options}</select>`
+        );
+    }
+
     formBlockEl.style.display = "flex";
 
     document.querySelector("#student_index").addEventListener("change", (e) => {
-      click++;
       const selectedIndex = Number(e.currentTarget.value);
       const values = Object.values(
         JSON.parse(localStorage.getItem("student"))[selectedIndex - 1]
@@ -177,10 +133,8 @@ document.querySelector("[data-edit]").addEventListener("click", () => {
         formElem[i + 1].value = values[i];
       }
       console.log(values);
-      // formElem.removeEventListener("submit"); //! err
       document.querySelector("[data-submitBtn]").classList.add("is-hidden");
       document.querySelector("[data-editBtn]").classList.remove("is-hidden");
-      // console.log(formElem);
     });
   } catch (err) {
     document
@@ -194,6 +148,7 @@ document.querySelector("[data-edit]").addEventListener("click", () => {
     }, 5000);
     console.warn(err);
   }
+  click++;
 });
 
 console.log(formElem[0]);
