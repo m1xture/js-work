@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <td>username</td>
+      <td>surname</td>
+      <td>email</td>
+      <td>phone</td>
+      <tbody></tbody>
+    </table>
+
+    <button type="button" data-add>add people</button>
+    <button type="button" data-change>change</button>
+
+    <div class="backdrop">
+      <div class="modal">
+        <form data-form>
+          <input type="text" name="username" id="" />
+          <input type="text" name="surname" id="" />
+          <input type="text" name="email" id="" placeholder="email" />
+          <input type="text" name="tel" id="" placeholder="phone" />
+          <!-- <input type="text" name=""> -->
+          <button type="submit">send</button>
+        </form>
+      </div>
+    </div>
+    <style>
+      .backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(2.5px);
+      }
+      .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: rgb(113, 113, 113);
+      }
+        
+    </style>
+    <script type="module" src="../js/classwork/cw60.js" defer></script>
+  </body>
+</html>
