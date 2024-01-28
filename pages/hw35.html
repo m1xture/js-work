@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw35. LocalStorage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="login-backdrop">
+      <form data-login-form>
+        <input
+          type="text"
+          name="login"
+          placeholder="Your login"
+          autocomplete="off"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Your pasword"
+          autocomplete="off"
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <button type="button" data-add>Add task</button>
+
+    <div class="add_backdrop is-hidden">
+      <form action="" data-add-form>
+        <input type="text" name="title" placeholder="Card title" />
+        <input type="text" name="description" placeholder="Card description" />
+        <input type="color" name="color" placeholder="Card border color" />
+        <button type="submit">Add card</button>
+      </form>
+    </div>
+
+    <div class="todo">
+      <h2 class="todo__title">Todo list</h2>
+      <ul class="todo__list" data-todo>
+        У тебе немає невиконаних завдань🥳
+      </ul>
+    </div>
+
+    <div class="completed">
+      <h2 class="completed__title">Completed tasks list</h2>
+      <ul class="completed__list" data-completed>
+        У тебе немає виконаних завдань😥
+      </ul>
+    </div>
+    <style>
+      body {
+        font-family: Montserrat;
+        background: linear-gradient(to right, #ece9e6, #ffffff);
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: #fffffe;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        flex-direction: column;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4 {
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        margin: 0;
+        padding: 0;
+        width: 300px;
+        height: 85px;
+        background-color: #90b4ce;
+        border-radius: 14px;
+      }
+      .todo {
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        background-color: #3da9fc;
+        border-radius: 14px;
+        padding: 9px;
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        text-wrap: balance;
+        align-items: center;
+        min-height: 100px;
+
+        justify-content: center;
+      }
+      .todo__item {
+        margin-bottom: 8px;
+        position: relative;
+        padding-top: 35px;
+        padding-right: 5px;
+        padding-left: 5px;
+        overflow: hidden;
+      }
+      li h3 {
+        font-size: 16px;
+
+      }
+      li p {
+        font-size: 14px;
+      }
+      .todo-color {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 30px;
+      }
+      .todo__item:last-child {
+        margin-bottom: 0;
+      }
+      .completed__item {
+        position: relative;
+        margin-bottom: 8px;
+      }
+      .completed__item:last-child {
+        margin-bottom: 0;
+      }
+      .todo__title,
+      .completed__title {
+        color: #094067;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .login-backdrop {
+        position: fixed;
+        right: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        backdrop-filter: blur(2px);
+        z-index: 2;
+      }
+      form {
+        width: 20vw;
+        height: 20vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: aliceblue;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 14px;
+      }
+      .completed {
+        position: absolute;
+        top: 20%;
+        right: 30%;
+        background-color: #3da9fc;
+        border-radius: 14px;
+        padding: 9px;
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        text-wrap: balance;
+        align-items: center;
+        justify-content: center;
+        min-height: 100px;
+      }
+      .is-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+    <script src="../js/hw35/hw35.js"></script>
+  </body>
+</html>
