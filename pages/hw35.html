@@ -40,7 +40,7 @@
 
     <button type="button" data-add>Add task</button>
 
-    <div class="add_backdrop is-hidden">
+    <div class="add-backdrop is-hidden">
       <form action="" data-add-form>
         <input type="text" name="title" placeholder="Card title" />
         <input type="text" name="description" placeholder="Card description" />
@@ -61,6 +61,28 @@
       <ul class="completed__list" data-completed>
         У тебе немає виконаних завдань😥
       </ul>
+    </div>
+
+    <section class="saved">
+      <!-- <button type="button" data-add-link>Add link</button> -->
+      <form data-add-link>
+        <input type="text" name="title" placeholder="link title" />
+        <input type="text" name="path" placeholder="link path" />
+        <button type="submit">Add link</button>
+      </form>
+      <ul class="saved__list" data-saved-list>
+        <i>You have not saved any links yet!</i>
+      </ul>
+    </section>
+    <div class="saved-overlay is-hidden">
+      <form data-saved-form>
+        <input type="text" placeholder="new title" name="newTitle" /><input
+          type="text"
+          placeholder="new path"
+          name="newPath"
+        />
+        <button type="submit">change!</button>
+      </form>
     </div>
     <style>
       body {
@@ -92,6 +114,8 @@
         height: 85px;
         background-color: #90b4ce;
         border-radius: 14px;
+        position: relative;
+        overflow: hidden;
       }
       .todo {
         position: absolute;
@@ -109,7 +133,15 @@
 
         justify-content: center;
       }
-      .todo__item {
+      [data-completed-switch] {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+      }
+      .todo__item,
+      .completed__item {
         margin-bottom: 8px;
         position: relative;
         padding-top: 35px;
@@ -119,7 +151,6 @@
       }
       li h3 {
         font-size: 16px;
-
       }
       li p {
         font-size: 14px;
@@ -148,7 +179,8 @@
         font-size: 24px;
         margin-bottom: 10px;
       }
-      .login-backdrop {
+      .login-backdrop,
+      .add-backdrop {
         position: fixed;
         right: 0;
         top: 0;
@@ -185,6 +217,25 @@
         align-items: center;
         justify-content: center;
         min-height: 100px;
+      }
+      .saved {
+        position: absolute;
+        background-color: #98c2e0;
+        top: 100%;
+        right: 50%;
+        left: 50%;
+        max-width: 90vw;
+        min-width: 15vw;
+        transform: translate(-50%);
+      }
+      .saved__list {
+        color: #333;
+        position: absolute;
+        left: -150%;
+      }
+      .saved__list li {
+        padding: 10px;
+        margin-bottom: 10px;
       }
       .is-hidden {
         opacity: 0;
