@@ -103,6 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("links")) {
       renderAllLinks();
     }
+    if (localStorage.getItem("contacts")) {
+      renderAllContacts();
+    }
   }
   document.querySelector("[data-add]").addEventListener("click", (evt) => {
     addCardFormElem.parentElement.classList.remove("is-hidden");
@@ -164,7 +167,7 @@ function renderAllLinks() {
       localStorageData.forEach((link) => {
         savedListEl.insertAdjacentHTML(
           "afterbegin",
-          `<li><a href=${link.linkPath}>${link.linkTitle}</a></li>`
+          `<li><a href=${link.linkPath} data-path=${link.linkPath}>${link.linkTitle}</a></li>`
         );
       });
     } catch (err) {
@@ -193,6 +196,7 @@ document.querySelector("[data-add-link]").addEventListener("submit", (e) => {
       localStorage.setItem("links", JSON.stringify([linkObj]));
     }
     renderAllLinks();
+    EventCounts.currentTarget.reset();
   }
 });
 
@@ -205,9 +209,9 @@ savedListEl.addEventListener("click", (e) => {
       const index = currLocalStrg.findIndex((link) => {
         const clickedElem = {
           linkTitle: e.target.firstElementChild.textContent,
-          linkPath: e.target.firstElementChild.href,
+          linkPath: e.target.firstElementChild.dataset.path,
         };
-        console.log(clickedElem);
+        console.log("clicked elem", clickedElem);
         console.log(link);
         return (
           clickedElem.linkTitle === link.linkTitle &&
@@ -235,16 +239,112 @@ savedListEl.addEventListener("click", (e) => {
                 linkTitle: e.currentTarget.newTitle.value.trim(),
                 linkPath: e.currentTarget.newPath.value.trim(),
               });
+              console.log(currLocalStrg, 241);
+              // console.log(currLocalStrg);
+              localStorage.setItem("links", JSON.stringify(currLocalStrg));
+              renderAllLinks();
+              savedFormEl.parentElement.classList.add("is-hidden");
             }
           });
         } else {
           return;
         }
       }
+      console.log(currLocalStrg);
       localStorage.setItem("links", JSON.stringify(currLocalStrg));
       renderAllLinks();
     } catch (err) {
       console.log(`Parsing error: ${err}`);
     }
   }
+});
+//todo: contacts
+
+const addFormContactsEl = document.querySelector("[data-add-contact]");
+const changeFormContactsEl = document.querySelector("[data-change-contact]");
+const contactsListEl = document.querySelector("[data-contacts-list");
+
+const renderAllContacts = () => {
+  JSON.parse(localStorage.getItem("contacts")).forEach((contactObj) => {
+    contactsListEl.insertAdjacentHTML(
+      "beforeend",
+      `<li><h3>${contactObj.contactsFullname} </h3><p>${contactObj.contactsPhone} </p><p>${contactObj.contactsEmail} </p></li>`
+    );
+  });
+};
+
+document
+  .querySelector("[data-add-contactBtn]")
+  .addEventListener("click", () => {
+    addFormContactsEl.classList.remove("is-hidden");
+  });
+addFormContactsEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = {
+    contactsFullname: e.currentTarget.fullname.value,
+    contactsPhone: e.currentTarget.phone.value,
+    contactsEmail: e.currentTarget.email.value,
+  };
+  let parsedStorage = JSON.parse(localStorage.getItem("contacts"));
+  if (parsedStorage) {
+    parsedStorage.push(formData);
+  } else {
+    parsedStorage = [formData];
+  }
+  localStorage.setItem("contacts", JSON.stringify(parsedStorage));
+  renderAllContacts();
+});
+
+contactsListEl.addEventListener("click", (e) => {
+  if (e.target.nodeName === "LI") {
+    const answer = confirm("Are you sure wanna delete this contact?");
+    if (answer) {
+      const index = Array.from(e.currentTarget.children).findIndex(
+        (item) => item === e.target
+      );
+      console.log(index);
+      const parsedStorage = JSON.parse(localStorage.getItem("contacts"));
+      parsedStorage.splice(index, 1);
+      localStorage.setItem("contacts", JSON.stringify(parsedStorage));
+      renderAllContacts();
+    }
+  }
+});
+
+document
+  .querySelector("[data-change-contactBtn]")
+  .addEventListener("click", () => {
+    changeFormContactsEl.classList.remove("is-hidden");
+    let i = 0;
+    const parsedArr = JSON.parse(localStorage.getItem("contacts"));
+    parsedArr.forEach((elem) => {
+      changeFormContactsEl.contactsindex.insertAdjacentHTML(
+        "beforeend",
+        `<option value=${i}>${i}</option>`
+      );
+
+      i++;
+    });
+    changeFormContactsEl.contactsindex.addEventListener("change", (e) => {
+      changeFormContactsEl.fullname.value =
+        parsedArr[e.currentTarget.value].contactsFullname;
+      changeFormContactsEl.phone.value =
+        parsedArr[e.currentTarget.value].contactsPhone;
+      changeFormContactsEl.email.value =
+        parsedArr[e.currentTarget.value].contactsEmail;
+    });
+  });
+
+changeFormContactsEl.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  const newContact = {
+    contactsFullname: evt.currentTarget.fullname.value,
+    contactsPhone: evt.currentTarget.phone.value,
+    contactsEmail: evt.currentTarget.email.value,
+    index: evt.currentTarget.contactsindex.value,
+  };
+  const parsedArr = JSON.parse(localStorage.getItem("contacts"));
+  parsedArr.splice(newContact.index, 1, newContact);
+  localStorage.setItem("contacts", JSON.stringify(parsedArr));
+  renderAllContacts();
 });

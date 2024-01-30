@@ -84,6 +84,37 @@
         <button type="submit">change!</button>
       </form>
     </div>
+
+    <section class="contacts">
+      <h2>Contacts</h2>
+      <button type="button" data-add-contactBtn>Add</button
+      ><button data-change-contactBtn type="button">change</button>
+      <form data-add-contact class="is-hidden">
+        <input type="text" name="fullname" placeholder="Enter fullname here" />
+        <input
+          type="tel"
+          name="phone"
+          required
+          placeholder="Enter phone num *required"
+        />
+        <input type="text" name="email"  placeholder="Enter email here" />
+        <button type="submit">add contact</button>
+      </form>
+      <form data-change-contact="" class="is-hidden">
+        <select name="contactsindex"></select>
+        <input type="text" name="fullname" placeholder="Enter fullname here" />
+        <input
+          type="tel"
+          name="phone"
+          required
+          placeholder="Enter phone num *required"
+        />
+        <input type="text" name="email" placeholder="Enter email here" />
+        <button type="submit">change contact</button>
+      </form>
+      <ul data-contacts-list=""></ul>
+    </section>
+
     <style>
       body {
         font-family: Montserrat;
@@ -116,6 +147,14 @@
         border-radius: 14px;
         position: relative;
         overflow: hidden;
+      }
+      .saved-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(5px);
       }
       .todo {
         position: absolute;
@@ -240,6 +279,13 @@
       .is-hidden {
         opacity: 0;
         pointer-events: none;
+      }
+      .contacts form {
+        position: static;
+        transform: none;
+      }
+      .contacts ul li h3, p{
+        display: inline;
       }
     </style>
     <script src="../js/hw35/hw35.js"></script>
