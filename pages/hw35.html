@@ -49,21 +49,25 @@
       </form>
     </div>
 
-    <div class="todo">
-      <h2 class="todo__title">Todo list</h2>
-      <ul class="todo__list" data-todo>
-        У тебе немає невиконаних завдань🥳
-      </ul>
-    </div>
+    <div style="display: flex">
+      <div class="todo">
+        <h2 class="todo__title">Todo list</h2>
+        <ul class="todo__list" data-todo>
+          У тебе немає невиконаних завдань🥳
+        </ul>
+      </div>
 
-    <div class="completed">
-      <h2 class="completed__title">Completed tasks list</h2>
-      <ul class="completed__list" data-completed>
-        У тебе немає виконаних завдань😥
-      </ul>
+      <div class="completed">
+        <h2 class="completed__title">Completed tasks list</h2>
+        <ul class="completed__list" data-completed>
+          У тебе немає виконаних завдань😥
+        </ul>
+      </div>
     </div>
 
     <section class="saved">
+      <h2>Links</h2>
+
       <!-- <button type="button" data-add-link>Add link</button> -->
       <form data-add-link>
         <input type="text" name="title" placeholder="link title" />
@@ -97,7 +101,7 @@
           required
           placeholder="Enter phone num *required"
         />
-        <input type="text" name="email"  placeholder="Enter email here" />
+        <input type="text" name="email" placeholder="Enter email here" />
         <button type="submit">add contact</button>
       </form>
       <form data-change-contact="" class="is-hidden">
@@ -157,7 +161,7 @@
         backdrop-filter: blur(5px);
       }
       .todo {
-        position: absolute;
+        /* position: absolute; */
         top: 20%;
         left: 30%;
         background-color: #3da9fc;
@@ -169,7 +173,7 @@
         text-wrap: balance;
         align-items: center;
         min-height: 100px;
-
+        margin-right: 20px;
         justify-content: center;
       }
       [data-completed-switch] {
@@ -243,7 +247,7 @@
         border-radius: 14px;
       }
       .completed {
-        position: absolute;
+        /* position: absolute; */
         top: 20%;
         right: 30%;
         background-color: #3da9fc;
@@ -258,18 +262,22 @@
         min-height: 100px;
       }
       .saved {
-        position: absolute;
+        /* position: absolute; */
         background-color: #98c2e0;
         top: 100%;
         right: 50%;
         left: 50%;
         max-width: 90vw;
         min-width: 15vw;
-        transform: translate(-50%);
+        /* transform: translate(-50%); */
+      }
+      .saved form {
+        position: static;
+        transform: none;
       }
       .saved__list {
         color: #333;
-        position: absolute;
+        /* position: absolute; */
         left: -150%;
       }
       .saved__list li {
@@ -281,10 +289,11 @@
         pointer-events: none;
       }
       .contacts form {
-        position: static;
-        transform: none;
+        /* position: static; */
+        /* transform: none; */
       }
-      .contacts ul li h3, p{
+      .contacts ul li h3,
+      p {
         display: inline;
       }
     </style>
