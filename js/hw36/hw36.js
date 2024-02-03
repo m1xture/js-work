@@ -53,6 +53,9 @@ function click(e) {
 }
 
 function startGame() {
+  score = 0;
+  clicks = 0;
+  renderScoreAndClicks();
   refs.listEl.addEventListener("click", click);
   setTimeout(() => {
     refs.listEl.removeEventListener("click", click);
@@ -60,3 +63,23 @@ function startGame() {
 }
 
 startGamebtnEl.addEventListener("click", startGame);
+
+//todo: #4
+
+const formEl = document.querySelector("[data-form]");
+formEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const inputValue = e.currentTarget.time.value;
+  if (!inputValue) {
+    console.log("The field is empty!");
+    return;
+  }
+  setTimeout(() => {
+    document
+      .querySelector(".timer")
+      .insertAdjacentHTML("beforebegin", "<h2 data-time-msg>Hello!</h2>");
+    setTimeout(() => {
+      document.querySelector("[data-time-msg]").remove();
+    }, 5000);
+  }, Number(inputValue) * 1000);
+});
