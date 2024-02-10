@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La-la-la</title>
+  </head>
+  <body>
+    <!-- <p data-time>5:00</p>
+    <button type="button" data-stop>stop</button
+    ><button data-continue type="button">continue</button
+    ><button type="button" data-clear>clear</button> -->
+    <!-- <p data-time2>10:00</p> -->
+    <!-- <div class="block"></div> -->
+
+    <form>
+      <input type="text" placeholder="seconds" name="seconds" /><button
+        type="submit"
+      >
+        Set timer
+      </button>
+    </form>
+    <p data-form-time></p>
+    <style>
+      .block {
+        background-color: #333;
+        border-radius: 15px;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+        transform: translate(-50%, -50%);
+        /* transform: translate(-50%, -50%); */
+      }
+      .zoomed {
+        transform: scale(1.5) translate(-50%, -50%);
+      }
+    </style>
+    <script type="module" src="../js/classwork/cw61.js"></script>
+  </body>
+</html>
