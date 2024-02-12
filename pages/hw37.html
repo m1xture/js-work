@@ -4,11 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hw37</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- todo #1 -->
-    <p data-timer1>1:00:00</p>
+    <p data-timer1>01:00:05</p>
     <!-- todo #2 -->
+    <p data-timer2>30:0000</p>
+    <button type="button" class="is-hidden" data-btn>Restart!</button>
+    <style>
+      body {
+        background-color: #333;
+        color: #eee;
+        font-family: Montserrat;
+        font-size: 48px;
+      }
+      [data-timer2] {
+        transition-duration: 250ms;
+        transition-timing-function: ease-in;
+        /* width: auto; */
+
+        display: inline;
+      }
+      .is-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
     <script type="module" src="../js/hw37/hw37.js"></script>
   </body>
 </html>

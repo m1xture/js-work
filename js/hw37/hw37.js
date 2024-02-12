@@ -1,6 +1,4 @@
 //todo: #1
-//? Я сделаю таймер не на час, а немного меньше
-//? чтобы можно было протестировать
 
 const textElem = document.querySelector("[data-timer1]");
 let hours = 1;
@@ -49,3 +47,57 @@ const id = setInterval(() => {
   }
   renderTime();
 }, 1000);
+
+//todo: #2
+
+const timerElem = document.querySelector("[data-timer2]");
+const btnEl = document.querySelector("[data-btn]");
+
+btnEl.addEventListener("click", startInteval);
+document.addEventListener("DOMContentLoaded", startInteval);
+
+function toggleBtn() {
+  btnEl.classList.toggle("is-hidden");
+  console.log(1);
+}
+
+function startInteval() {
+  let time = 1000 * 30;
+  // toggleBtn();
+  btnEl.classList.add("is-hidden");
+  function showAndHideMsg() {
+    document.body.insertAdjacentHTML(
+      "beforeend",
+      "it is the end of second task"
+    );
+  }
+
+  function animate() {
+    timerElem.style.transform = "translate(30vw)";
+    setTimeout(() => {
+      timerElem.style.transform = "";
+    }, 3000);
+  }
+
+  function renderTimer() {
+    const seconds = Math.round(time / 1000);
+    const miliseconds = time % 60;
+    if (seconds === 10) {
+      animate();
+    }
+    if (seconds <= 0 && miliseconds <= 0) {
+      timerElem.textContent = `00:00`;
+      return;
+    }
+    timerElem.textContent = `${seconds}:${miliseconds}`;
+  }
+
+  const id2 = setInterval(() => {
+    time -= 7;
+    renderTimer();
+    if (time <= 0) {
+      clearInterval(id2);
+      toggleBtn();
+    }
+  }, 7);
+}
