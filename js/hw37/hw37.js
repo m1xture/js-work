@@ -52,6 +52,7 @@ const id = setInterval(() => {
 
 const timerElem = document.querySelector("[data-timer2]");
 const btnEl = document.querySelector("[data-btn]");
+const blockEl = document.querySelector("[data-block]");
 
 btnEl.addEventListener("click", startInteval);
 document.addEventListener("DOMContentLoaded", startInteval);
@@ -73,9 +74,9 @@ function startInteval() {
   }
 
   function animate() {
-    timerElem.style.transform = "translate(30vw)";
+    blockEl.style.transform = "translate(0, 10vh)";
     setTimeout(() => {
-      timerElem.style.transform = "";
+      blockEl.style.transform = "";
     }, 3000);
   }
 

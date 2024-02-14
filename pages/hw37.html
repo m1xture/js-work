@@ -15,7 +15,7 @@
     <!-- todo #1 -->
     <p data-timer1>01:00:05</p>
     <!-- todo #2 -->
-    <p data-timer2>30:0000</p>
+    <div data-block><p data-timer2>30:0000</p></div>
     <button type="button" class="is-hidden" data-btn>Restart!</button>
     <style>
       body {
@@ -23,6 +23,10 @@
         color: #eee;
         font-family: Montserrat;
         font-size: 48px;
+      }
+      div {
+        transition-duration: 250ms;
+        transition-timing-function: ease-in;
       }
       [data-timer2] {
         transition-duration: 250ms;
