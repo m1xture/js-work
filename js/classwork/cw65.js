@@ -141,22 +141,24 @@
 //   });
 //? nwexty
 
-function getRandomNumber() {
-  return new Promise((resolve, reject) => {
-    const randomNum = Math.round(Math.random() * 10 - 0);
-    if (randomNum >= 5) {
-      reject("error");
-    } else {
-      resolve(randomNum);
-    }
-  });
-}
+// function getRandomNumber() {
+//   return new Promise((resolve, reject) => {
+//     const randomNum = Math.round(Math.random() * 10 - 0);
+//     if (randomNum >= 5) {
+//       reject("error");
+//     } else {
+//       resolve(randomNum);
+//     }
+//   });
+// }
 
-getRandomNumber()
-  .then((num) => {
-    console.log(num + 10);
-  })
-  .catch((e) => console.log(e))
-  .finally(() => {
-    console.log("promise is all");
-  });
+// getRandomNumber()
+//   .then((num) => {
+//     console.log(num + 10);
+//   })
+//   .catch((e) => console.log(e))
+//   .finally(() => {
+//     console.log("promise is all");
+//   });
+
+
