@@ -7,17 +7,21 @@ function delayedPromise(value, delay) {
     }, delay);
   });
 }
-async function showPromises() {
-  const arrOfResults = await Promise.all([
-    delayedPromise("lalala", 4500),
-    delayedPromise("Tatata", 5000),
-    delayedPromise("lyalyalya", 6000),
-    delayedPromise("hello", 7000),
-    delayedPromise("node.js", 10000),
-  ]);
-  await console.log(arrOfResults);
-}
-showPromises();
+// function showPromises() {
+const arrOfResults = Promise.all([
+  delayedPromise("lalala", 450),
+  delayedPromise("Tatata", 500),
+  delayedPromise("lyalyalya", 600),
+  delayedPromise("hello", 700),
+  delayedPromise("node.js", 1000),
+])
+  .then((res) => console.log(res))
+  .catch((e) => console.log(e));
+// return arrOfResults;
+// }
+// setTimeout(() => {
+//     console.log(arrOfResults);
+// }, 2000);
 
 //todo: #2
 
@@ -28,15 +32,15 @@ function randomDelay(value) {
     }, Math.round(Math.random() * 10000 - 1000 + 1000));
   });
 }
-const arrOfPromises = [
+Promise.race([
   randomDelay("hello"),
   randomDelay("world"),
   randomDelay("node.js"),
   randomDelay("ecmascript"),
   randomDelay("react"),
-];
+]).then((msg) => console.log(msg));
 
-async function log() {
-  console.log(await Promise.race(arrOfPromises));
-}
-log();
+// async function log() {
+//   console.log(await Promise.race(arrOfPromises));
+// }
+// log();
