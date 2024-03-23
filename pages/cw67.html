@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cw67</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <ul class="products"></ul>
+    <button type="button" data-btn>view more</button>
+    <style>
+      body {
+        padding-top: 50px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+      }
+      ul li {
+        width: 400px;
+        height: 500px;
+        background-color: rgb(236, 197, 126);
+        border-radius: 20px;
+        overflow: hidden;
+        padding: 20px;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border-radius: 20px;
+        border: none;
+        outline: 6px solid rgb(236, 197, 126);
+        width: 150px;
+        height: 50px;
+        display: block;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        /* text-transform: uppercase; */
+        font-family: "Caveat";
+        font-size: 32px;
+        transition-duration: 300ms;
+        transition-delay: 70ms;
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: #333;
+        color: rgb(236, 197, 126);
+        outline: none;
+      }
+    </style>
+    <script type="module" src="../js/classwork/cw67.js"></script>
+  </body>
+</html>

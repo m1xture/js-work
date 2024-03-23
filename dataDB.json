@@ -1,0 +1,12 @@
+{
+  "products": [
+    { "id": 1, "name": "lemon", "quality": "good", "price": 70 },
+    { "id": 2, "name": "apple", "quality": "middle", "price": 50 },
+    { "id": 3, "name": "avocado", "quality": "low", "price": 25 },
+    { "id": 4, "name": "banana", "quality": "good", "price": 100 }
+  ],
+  "phones": [
+    { "id": 5, "name": "Xiami 13T", "price": "18000" },
+    { "id": 6, "name": "Apple Iphone 15 Pro", "price": 45000 }
+  ]
+}
