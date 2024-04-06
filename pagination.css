@@ -154,3 +154,22 @@ p {
   background-color: rgba(0, 0, 0, 0.25);
   z-index: -1;
 }
+.search__input {
+  border-radius: 14px;
+  width: 270px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  transition: all 250ms 50ms;
+}
+.search__input:hover {
+  box-shadow: 0px 0px 10px 1px rgba(134, 169, 123, 1);
+}
+.search__input:focus {
+  outline: 3.5px solid #86a97b;
+}
