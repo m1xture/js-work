@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async/await</title>
+    <link href="../imgs/fav.png" type="image/x-icon" rel="shortcut icon" />
+  </head>
+  <body>
+    <ul class="products"></ul>
+    <form data-add-form="">
+      <input placeholder="name" type="text" name="name" /><input
+        placeholder="emoji"
+        type="text"
+        name="emoji"
+      /><input placeholder="description" type="text" name="description" />
+      <input placeholder="price" type="text" name="price" />
+      <input placeholder="quantity" type="text" name="quantity" />
+      <button type="submit">add product</button>
+    </form>
+
+    <style>
+      ul {
+        list-style: none;
+      }
+      .products {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+    </style>
+    <script src="../js/classwork/cw70.js" type="module"></script>
+  </body>
+</html>
